@@ -1,0 +1,30 @@
+@import '../assets/scss/breakpoints';
+
+.navbar {
+  padding: 0.5rem;
+  display: flex;
+  position: fixed;
+  width: 95%;
+  @include sm {
+    padding: 1rem;
+    
+  }
+  @include lg{
+    width: 98%;
+  }
+  justify-content: space-between;
+  align-items: center;
+  button {
+    fa-icon {
+      font-size: 1.3em;
+      @include sm {
+        font-size: 1.7em;
+      }
+    }
+  }
+}
+
+.static-page{
+  height: 90vh;
+}
+

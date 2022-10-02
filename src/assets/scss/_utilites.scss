@@ -1,0 +1,46 @@
+@use "sass:map";
+@use "sass:string";
+@use "sass:math";
+
+$utilities: (
+//padding
+  "padding": spacing("p", $base-padding),
+  "padding-left": spacing("pl", $base-padding),
+  "padding-right": spacing("pr", $base-padding),
+  "padding-top": spacing("pt", $base-padding),
+  "padding-bottom": spacing("pb", $base-padding),
+  "paddingx": spacing("px", $base-padding),
+  "paddingy": spacing("py", $base-padding),
+//margin
+    "margin": spacing("m", $base-margin),
+    "margin-left": spacing("ml", $base-margin),
+    "margin-right": spacing("mr", $base-margin),
+    "margin-top": spacing("mt", $base-margin),
+    "margin-bottom": spacing("mb", $base-margin),
+    "marginx": spacing("mx", $base-margin),
+    "marginy": spacing("my", $base-margin)
+);
+
+@each $property, $map in $utilities {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    $lenghtToSlice: string.length($property);
+    @if (string.slice($prefix, 2) == "x") {
+      .#{$prefix}-#{$k} {
+        #{string.slice($property,1,$lenghtToSlice - 1)}-left: $v;
+        #{string.slice($property,1,$lenghtToSlice - 1)}-right: $v;
+      }
+    } @else if (string.slice($prefix, 2) == "y") {
+      .#{$prefix}-#{$k} {
+        #{string.slice($property,1,$lenghtToSlice - 1)}-top: $v;
+        #{string.slice($property,1,$lenghtToSlice - 1)}-bottom: $v;
+      }
+    } @else {
+      .#{$prefix}-#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}
