@@ -18,8 +18,48 @@ $utilities: (
     "margin-top": spacing("mt", $base-margin),
     "margin-bottom": spacing("mb", $base-margin),
     "marginx": spacing("mx", $base-margin),
-    "marginy": spacing("my", $base-margin)
+    "marginy": spacing("my", $base-margin),
+//width
+  "width": utilsPercentage("w",$base-percentage),
+  "min-width": utilsPercentage("min-w",$base-percentage),
+//height
+  "height": utilsPercentage("h",$base-percentage),
+  "min-height": utilsPercentage("min-h",$base-percentage),
+//display
+  "display":(
+    "prefix":"d",
+    "values":(
+      "block": block,
+      "inline": inline,
+      "flex":flex,
+      "none": none,
+    )
+  ),
+  //flex properties
+  "justify-content":(
+      "prefix":"justify-content",
+      "values":(
+        "flex-start":flex-start,
+        "flex-end":flex-end,
+        "center":center,
+        "space-between":space-between,
+        "space-evenly":space-evenly,
+        "space-around":space-around,
+      )
+  ),
+  "align-items":(
+    "prefix":"align-items",
+    "values":(
+      "flex-start":flex-start,
+      "flex-end":flex-end,
+      "center":center,
+    )
+)
 );
+
+
+
+
 
 @each $property, $map in $utilities {
   $prefix: map-get($map, "prefix");
@@ -27,6 +67,7 @@ $utilities: (
 
   @each $k, $v in $values {
     $lenghtToSlice: string.length($property);
+    
     @if (string.slice($prefix, 2) == "x") {
       .#{$prefix}-#{$k} {
         #{string.slice($property,1,$lenghtToSlice - 1)}-left: $v;
@@ -40,6 +81,34 @@ $utilities: (
     } @else {
       .#{$prefix}-#{$k} {
         #{$property}: $v;
+      }
+    }
+  }
+}
+
+@each $key-b,$val in $breakpoints {
+  @media(min-width: map-get($breakpoints,$key-b)){
+    @each $property, $map in $utilities {
+      $prefix: map-get($map, "prefix");
+      $values: map-get($map, "values");
+    
+      @each $k, $v in $values {
+        $lenghtToSlice: string.length($property);
+        @if (string.slice($prefix, 2) == "x") {
+          .#{$prefix}-#{$k}-#{$key-b} {
+            #{string.slice($property,1,$lenghtToSlice - 1)}-left: $v;
+            #{string.slice($property,1,$lenghtToSlice - 1)}-right: $v;
+          }
+        } @else if (string.slice($prefix, 2) == "y") {
+          .#{$prefix}-#{$k}-#{$key-b} {
+            #{string.slice($property,1,$lenghtToSlice - 1)}-top: $v;
+            #{string.slice($property,1,$lenghtToSlice - 1)}-bottom: $v;
+          }
+        } @else {
+          .#{$prefix}-#{$k}-#{$key-b} {
+            #{$property}: $v;
+          }
+        }
       }
     }
   }
