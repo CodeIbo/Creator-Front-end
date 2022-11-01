@@ -1,0 +1,35 @@
+<nav class="side-nav bg-tertiary-dark-1 px-2 text-white">
+    <div class="mt-2 text-center">
+        <button class="side-nav__button"><fa-icon [icon]="faArrowLeftLong"></fa-icon></button>
+    </div>
+    <ul class=" d-flex flex-column gap-2 mt-2 ">
+        <li><a class="animate-underline" href="">O mnie</a></li>
+        <li><a class="animate-underline" href="">Blog</a></li>
+        <li><a class="animate-underline" href="">Podcasty</a></li>
+        <li><a class="animate-underline" href="">Kontakt</a></li>
+    </ul>
+    <div class="d-flex flex-column align-items-center w-100 side-nav__icons mt-3 gap-3" *ngIf="screenBreakpoints.init().sm > innerWidth">
+        <a
+        href="https://www.facebook.com/people/Pani-Komunikolog/100069643473900/"
+        rel="noopener"
+        target="_blank"
+        title=""
+        ><fa-icon [icon]="faFacebook"></fa-icon>
+      </a>
+      <a
+        href="https://www.instagram.com/pani_komunikolog/"
+        rel="noopener"
+        target="_blank"
+        ><fa-icon [icon]="faInstagram"></fa-icon>
+      </a>
+      <a
+        href="https://www.tiktok.com/@panikomunikolog"
+        rel="noopener"
+        target="_blank"
+        ><fa-icon [icon]="faTiktok"></fa-icon>
+      </a>
+      <a href="https://www.linkedin.com/in/klaudia-katarzy%C5%84ska-97a9b3212" rel="noopener" target="_blank">
+        <fa-icon [icon]="faLinkedin"></fa-icon
+      ></a>
+    </div>
+</nav>

@@ -1,7 +1,10 @@
 <nav class="navbar">
     <button><fa-icon [icon]="faBars"></fa-icon></button>
-    <app-iconTab></app-iconTab>
+    <app-iconTab *ngIf="screenBreakpoints.init().sm < innerWidth"></app-iconTab>
 </nav>
+
+<app-sideNav></app-sideNav>
+
 <section class="static-page">
     
 </section>
@@ -10,7 +13,17 @@
         <p>test</p>
         <p>test1</p>
         <p>test2</p>
-        <p>test3</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu leo malesuada, fermentum ex ut, placerat felis. Phasellus sed mollis sem, vel gravida magna. Integer vitae sodales lacus. Praesent consequat odio vitae vulputate posuere. Phasellus consequat molestie convallis. Proin lacinia aliquam aliquam. Donec nec feugiat tellus. Duis consequat pulvinar dui, at luctus neque semper ut. Nulla odio lacus, sollicitudin nec pretium eu, facilisis porttitor metus. Donec quam dui, placerat non tincidunt et, aliquam vel libero. Vestibulum at metus bibendum, ultricies neque a, posuere mauris. Fusce vel ex risus. Donec congue, magna ut ornare faucibus, nulla diam bibendum libero, ut pretium dui eros vel odio. Aliquam vehicula dolor vel porta iaculis. Nam ante ex, tempus quis massa vitae, cursus facilisis lectus. Donec scelerisque enim eu ipsum mattis lobortis.
+
+            Pellentesque consequat dui in magna imperdiet consectetur. Ut vestibulum auctor ipsum. Donec facilisis nibh nec arcu pharetra aliquam. Duis interdum rhoncus odio vel egestas. Integer quis enim tellus. Sed vel tempus metus. Pellentesque nec lobortis dui.
+            
+            Duis interdum ligula et imperdiet scelerisque. Mauris pretium nulla justo, nec cursus dolor auctor sollicitudin. Curabitur lectus risus, posuere et facilisis nec, pulvinar id ipsum. Fusce massa lectus, commodo sed faucibus id, elementum quis lorem. Curabitur est odio, sagittis ut leo sed, blandit imperdiet ex. Etiam nibh enim, cursus ac felis in, porta facilisis velit. Nam a accumsan augue. Suspendisse convallis metus ac quam semper fermentum. Etiam non enim non elit dignissim sollicitudin. Phasellus velit turpis, iaculis eu accumsan et, vehicula nec nisi. In ut magna a dui pharetra ultricies. Integer sit amet luctus velit. Integer sapien lectus, porta eu maximus vel, pharetra ac ante. Etiam efficitur dui eu libero varius consequat. Suspendisse sit amet ex sed felis malesuada eleifend et vitae augue. Duis tempus tempus orci, ac maximus felis.
+            
+            Nam ullamcorper risus ut velit dapibus, at finibus sem vestibulum. Etiam lobortis euismod odio, nec tempus dolor consequat at. Integer condimentum neque sit amet erat tincidunt, quis convallis metus consequat. Suspendisse id nisl imperdiet, interdum mi vitae, rhoncus nisi. Proin quis dolor sit amet est eleifend ornare. Vivamus sit amet justo dolor. Curabitur id finibus massa. Integer vestibulum diam vitae risus condimentum, nec ullamcorper orci lacinia. Donec vulputate, metus vitae volutpat venenatis, sem neque aliquet mauris, sit amet lacinia diam ipsum non lacus. Etiam hendrerit massa eget mauris molestie, non egestas leo iaculis. Nulla suscipit quam dolor, sit amet consequat velit mattis non. Praesent vitae feugiat ipsum, id congue sapien. Sed volutpat mi nulla, sit amet hendrerit tortor porttitor eu.
+            
+            Pellentesque purus dolor, vulputate vitae eleifend at, porta congue mauris. Phasellus leo metus, luctus consectetur luctus rhoncus, eleifend sed enim. Pellentesque accumsan, ipsum consectetur congue tempor, nunc erat auctor enim, quis venenatis est tellus id est. Morbi eu tincidunt turpis, ac tempus mauris. Suspendisse vulputate metus a odio vehicula, nec consectetur sem ultricies. Mauris eleifend erat vitae risus commodo ullamcorper. Cras ante felis, finibus eu sodales eu, faucibus in est.
+            
+            </p>
     </div>
 </section>
 

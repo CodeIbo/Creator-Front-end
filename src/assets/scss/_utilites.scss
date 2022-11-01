@@ -25,6 +25,8 @@ $utilities: (
 //height
   "height": utilsPercentage("h",$base-percentage),
   "min-height": utilsPercentage("min-h",$base-percentage),
+// gap
+  "gap": spacing("gap",$base-gap),
 //display
   "display":(
     "prefix":"d",
@@ -54,7 +56,26 @@ $utilities: (
       "flex-end":flex-end,
       "center":center,
     )
-)
+  ),
+  "flex-direction":(
+    "prefix":"flex",
+    "values":(
+      "row": row,
+      "row-reverse":row-reverse,
+      "column": column,
+      "column-reverse": column-reverse
+    )
+  ),
+  //text property
+  "text-align":(
+    "prefix":"text",
+    "values":(
+      "center":center,
+      "left":left,
+      "right":right,
+      "justify":justify
+    )
+  )
 );
 
 
@@ -87,7 +108,7 @@ $utilities: (
 }
 
 @each $key-b,$val in $breakpoints {
-  @media(min-width: map-get($breakpoints,$key-b)){
+  @media(min-width: #{map-get($breakpoints,$key-b) * 1px}){
     @each $property, $map in $utilities {
       $prefix: map-get($map, "prefix");
       $values: map-get($map, "values");

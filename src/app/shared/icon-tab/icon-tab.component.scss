@@ -11,9 +11,7 @@
   @include md {
     min-width: 20rem;
   }
-
   a {
-    color: $secondary;
     transition: all 0.5s ease-in-out;
     &:hover {
       transform: scale(1.3);
