@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { IconTabComponent } from './shared/icon-tab/icon-tab.component';
 import { NavBarComponent } from './shared/side-nav/side-nav.component';
 import { MainSection } from './static/main-section/main-section.component';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { MainSection } from './static/main-section/main-section.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

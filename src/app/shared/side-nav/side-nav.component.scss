@@ -1,4 +1,9 @@
 @import "../../../assets/scss/variabless";
+
+:host {
+    display:block;
+}
+
 .side-nav{
     position: fixed;
     height: 100vh;

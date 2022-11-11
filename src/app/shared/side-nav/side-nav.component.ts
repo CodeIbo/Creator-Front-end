@@ -2,6 +2,7 @@ import { Component, HostListener } from "@angular/core";
 import { faFacebook, faInstagram, faTiktok, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 import { screenBreakpointsService } from "src/app/services/screen-breakpoints.service";
+import { viewManipulation } from "src/app/services/view-manipulation.service";
 @Component({
     selector:'app-sideNav',
     templateUrl: './side-nav.component.html',
@@ -16,11 +17,11 @@ export class NavBarComponent {
     faLinkedin = faLinkedin
     public innerWidth: number | any;
     
-    constructor(public screenBreakpoints: screenBreakpointsService){
-        this.innerWidth = window.innerWidth
-      }
+    constructor(public screenBreakpoints: screenBreakpointsService,public viewManipulation: viewManipulation){
+      this.innerWidth = window.innerWidth
+    }
     
-      @HostListener('window:resize') onResize() {
-        this.innerWidth = window.innerWidth;
-      };
+    @HostListener('window:resize') onResize() {
+      this.innerWidth = window.innerWidth;
+    };
 }

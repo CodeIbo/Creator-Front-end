@@ -4,7 +4,6 @@ import screenBreakpointsInterface from "../interfaces/screen-breakpoints.interfa
 
 @Injectable({ providedIn: 'root' })
 export class screenBreakpointsService {
-    
     init(){
         const root = getComputedStyle(document.body)
         const screenBreakpoints:screenBreakpointsInterface = {

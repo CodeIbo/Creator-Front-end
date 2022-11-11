@@ -1,16 +1,15 @@
 <nav class="navbar">
-    <button><fa-icon [icon]="faBars"></fa-icon></button>
+    <button (click)="viewManipulation.toogleView()"><fa-icon [icon]="faBars"></fa-icon></button>
     <app-iconTab *ngIf="screenBreakpoints.init().sm < innerWidth"></app-iconTab>
 </nav>
 
-<app-sideNav></app-sideNav>
+<app-sideNav *ngIf="viewManipulation.showSideBar" @slideInOut></app-sideNav>
 
 <section class="static-page">
     
 </section>
 <section>
     <div class="container row">
-        <p>test</p>
         <p>test1</p>
         <p>test2</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu leo malesuada, fermentum ex ut, placerat felis. Phasellus sed mollis sem, vel gravida magna. Integer vitae sodales lacus. Praesent consequat odio vitae vulputate posuere. Phasellus consequat molestie convallis. Proin lacinia aliquam aliquam. Donec nec feugiat tellus. Duis consequat pulvinar dui, at luctus neque semper ut. Nulla odio lacus, sollicitudin nec pretium eu, facilisis porttitor metus. Donec quam dui, placerat non tincidunt et, aliquam vel libero. Vestibulum at metus bibendum, ultricies neque a, posuere mauris. Fusce vel ex risus. Donec congue, magna ut ornare faucibus, nulla diam bibendum libero, ut pretium dui eros vel odio. Aliquam vehicula dolor vel porta iaculis. Nam ante ex, tempus quis massa vitae, cursus facilisis lectus. Donec scelerisque enim eu ipsum mattis lobortis.
