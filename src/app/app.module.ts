@@ -8,13 +8,15 @@ import { IconTabComponent } from './shared/icon-tab/icon-tab.component';
 import { NavBarComponent } from './shared/side-nav/side-nav.component';
 import { MainSection } from './static/main-section/main-section.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AboutMe } from './static/about-me-section/about-me.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainSection,
     IconTabComponent,
-    NavBarComponent
+    NavBarComponent,
+    AboutMe
   ],
   imports: [
     BrowserModule,
@@ -26,3 +28,4 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

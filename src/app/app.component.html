@@ -1,13 +1,13 @@
 <nav class="navbar">
-    <button (click)="viewManipulation.toogleView()"><fa-icon [icon]="faBars"></fa-icon></button>
+    <button (click)="viewManipulation.toogleView()" ><fa-icon [icon]="faBars" ></fa-icon></button>
     <app-iconTab *ngIf="screenBreakpoints.init().sm < innerWidth"></app-iconTab>
 </nav>
 
 <app-sideNav *ngIf="viewManipulation.showSideBar" @slideInOut></app-sideNav>
 
-<section class="static-page">
-    
-</section>
+<app-main-section></app-main-section>
+<app-about-me-section></app-about-me-section>
+
 <section>
     <div class="container row">
         <p>test1</p>
@@ -29,3 +29,4 @@
 <section>
 
 </section>
+

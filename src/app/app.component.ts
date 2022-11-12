@@ -5,7 +5,6 @@ import { screenBreakpointsService } from './services/screen-breakpoints.service'
 import { viewManipulation } from './services/view-manipulation.service';
 
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,11 +14,6 @@ import { viewManipulation } from './services/view-manipulation.service';
 export class AppComponent {
   public innerWidth: number | any;
   faBars = faBars
-  test = false 
-  swap = () => {
-    this.test = !this.test
-    console.log(this.test)
-  }
 
   constructor(public screenBreakpoints: screenBreakpointsService,public viewManipulation: viewManipulation){
     this.innerWidth = window.innerWidth

@@ -75,7 +75,9 @@ $utilities: (
       "right":right,
       "justify":justify
     )
-  )
+  ),
+  // border property 
+  "border-radius": utilsPercentage("br",$base-percentage),
 );
 
 
@@ -134,3 +136,4 @@ $utilities: (
     }
   }
 }
+

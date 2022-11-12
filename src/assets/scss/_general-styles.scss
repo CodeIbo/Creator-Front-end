@@ -1,3 +1,8 @@
+@import './breakpoints';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
 //reset styles
 
 body {
@@ -6,6 +11,7 @@ body {
     padding: 0;
     margin: 0;
     font-size: $base-fontSize;
+    font-family: 'Averia Serif Libre', cursive;
 }
 
 
@@ -33,4 +39,48 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+img {
+    max-width:100%;
+}
+
+h1 {
+    font-size: $base-fontSize * 1.25;
+    @include xs {
+        font-size: $base-fontSize * 1.75;
+    }
+    @include sm {
+        font-size: $base-fontSize * 2;
+    }
+    @include md {
+        font-size: $base-fontSize * 3;
+    }
+}
+
+h2{
+    font-size: $base-fontSize * 1.15;
+    @include xs {
+        font-size: $base-fontSize * 1.55;
+    }
+    @include sm {
+        font-size: $base-fontSize * 1.8;
+    }
+    @include md {
+        font-size: $base-fontSize * 2.5;
+    }
+}
+
+p{
+    font-size: $base-fontSize * 0.75;
+    line-height: 1.75em;
+    @include xs {
+        font-size: $base-fontSize * 0.85;
+    }
+    @include sm {
+        font-size: $base-fontSize * 0.95;
+    }
+    @include md {
+        font-size: $base-fontSize * 1.25;
+    }
 }

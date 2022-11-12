@@ -6,6 +6,7 @@
   display: flex;
   position: fixed;
   width: 95%;
+  z-index: 1;
   @include sm {
     padding: 1rem;
     
@@ -23,9 +24,5 @@
       }
     }
   }
-}
-
-.static-page{
-  height: 90vh;
 }
 

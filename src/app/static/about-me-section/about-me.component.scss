@@ -1,0 +1,12 @@
+@import '../../../assets/scss/variabless';
+
+ .about-me{
+    &__subtitle{
+        background: $primary;
+    }
+    &__line{
+        border-bottom: 2px solid $secondary; 
+        line-height: 0.1em;
+    }
+ }
+ 

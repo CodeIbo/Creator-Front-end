@@ -15,3 +15,4 @@ export class IconTabComponent  {
   faLinkedin = faLinkedin
 
 }
+

@@ -1,15 +1,17 @@
 @import "../../../assets/scss/variabless";
 
 :host {
-    display:block;
+    position: fixed;
+    min-height: 100vh;
+    left: 0;
+    top:0;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.55);
+    clip-path: inset(0px -15px 0px 0px);
+    z-index: 10;
 }
 
 .side-nav{
-    position: fixed;
-    height: 100vh;
-    left: 0;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.55);
-    clip-path: inset(0px -15px 0px 0px);
+    min-height: 100vh;
     ul{
         font-size: 1.5em;
     }
