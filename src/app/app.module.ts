@@ -9,6 +9,7 @@ import { NavBarComponent } from './shared/side-nav/side-nav.component';
 import { MainSection } from './static/main-section/main-section.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AboutMe } from './static/about-me-section/about-me.component';
+import { ContactSectionComponent } from './static/contact-section/contact-section/contact-section.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AboutMe } from './static/about-me-section/about-me.component';
     MainSection,
     IconTabComponent,
     NavBarComponent,
-    AboutMe
+    AboutMe,
+    ContactSectionComponent
   ],
   imports: [
     BrowserModule,

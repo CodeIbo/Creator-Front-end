@@ -3,10 +3,10 @@
         <button class="side-nav__button" (click)="viewManipulation.toogleView()" ><fa-icon [icon]="faArrowLeftLong"></fa-icon></button>
     </div>
     <ul class=" d-flex flex-column gap-2 pt-2 ">
-        <li><a class="animate-underline" href="">O mnie</a></li>
+        <li><button class="animate-underline" (click)="scrollService.scroll('#ja')">O mnie</button></li>
         <li><a class="animate-underline" href="">Blog</a></li>
         <li><a class="animate-underline" href="">Podcasty</a></li>
-        <li><a class="animate-underline" href="">Kontakt</a></li>
+        <li><button class="animate-underline" (click)="scrollService.scroll('#kontakt')">Kontakt</button></li>
     </ul>
     <div class="d-flex flex-column align-items-center w-100 side-nav__icons mt-3 gap-3" *ngIf="screenBreakpoints.init().sm > innerWidth">
         <a

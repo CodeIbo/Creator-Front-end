@@ -1,7 +1,8 @@
-import { Component, HostListener } from "@angular/core";
+import { Component, HostListener, ViewChild } from "@angular/core";
 import { faFacebook, faInstagram, faTiktok, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 import { screenBreakpointsService } from "src/app/services/screen-breakpoints.service";
+import { scrollService } from "src/app/services/scroll.service";
 import { viewManipulation } from "src/app/services/view-manipulation.service";
 @Component({
     selector:'app-sideNav',
@@ -17,7 +18,7 @@ export class NavBarComponent {
     faLinkedin = faLinkedin
     public innerWidth: number | any;
     
-    constructor(public screenBreakpoints: screenBreakpointsService,public viewManipulation: viewManipulation){
+    constructor(public screenBreakpoints: screenBreakpointsService,public viewManipulation: viewManipulation, public scrollService:scrollService){
       this.innerWidth = window.innerWidth
     }
     
@@ -25,3 +26,4 @@ export class NavBarComponent {
       this.innerWidth = window.innerWidth;
     };
 }
+

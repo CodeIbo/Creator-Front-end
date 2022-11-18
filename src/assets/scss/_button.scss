@@ -1,0 +1,25 @@
+.button {
+    padding: 1em 2em; 
+    background-color: $accent;
+    box-shadow: -0.4em 0.4em 0 0 $black;
+    border-radius: 0.3em;
+    border-style: solid;
+    transition: all 1s;
+    width: 12em;
+    span {
+        font-size: $base-fontSize * 1.5;
+        color:$white;
+    }
+    &:hover {
+        background-color: darken($accent,15%);
+    }
+
+    @include sm{
+        padding: 1.5em 3em; 
+        box-shadow: -0.5em 0.6em 0 0 $black;
+        width: 15em;
+        span {
+            font-size: $base-fontSize * 2;
+        }
+    }
+}
