@@ -5,10 +5,8 @@
     </nav>
     
     <app-sideNav *ngIf="viewManipulation.showSideBar" @slideInOut></app-sideNav>
-    
-    <app-main-section id="ja"></app-main-section>
-    <app-about-me-section></app-about-me-section>
-    <app-contact-section id="kontakt"></app-contact-section>
+    <router-outlet ></router-outlet>
+
 </div>
 
 

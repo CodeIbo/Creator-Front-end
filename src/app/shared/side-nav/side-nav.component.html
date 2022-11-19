@@ -3,12 +3,12 @@
         <button class="side-nav__button" (click)="viewManipulation.toogleView()" ><fa-icon [icon]="faArrowLeftLong"></fa-icon></button>
     </div>
     <ul class=" d-flex flex-column gap-2 py-1/2 pt-2-sm">
-        <li><button class="animate-underline" (click)="scrollService.scroll('#ja')">O mnie</button></li>
-        <li><a class="animate-underline" href="">Blog</a></li>
-        <li><a class="animate-underline" href="">Podcasty</a></li>
-        <li><button class="animate-underline" (click)="scrollService.scroll('#kontakt')">Kontakt</button></li>
+        <li ><a class="animate-underline"  routerLink="/" (click)="scrollService.scroll('#ja')">O mnie</a></li>
+        <li><a class="animate-underline" routerLink="blog">Blog</a></li>
+        <li><a class="animate-underline" routerLink="podcast">Podcasty</a></li>
+        <li><a class="animate-underline" routerLink="/" (click)="scrollService.scroll('#kontakt')" >Kontakt</a></li>
     </ul>
-    <div class="d-flex flex-column align-items-center w-100 side-nav__icons mt-1 gap-2" *ngIf="screenBreakpoints.init().sm > innerWidth">
+    <div class="d-flex flex-column align-items-center w-100 side-nav__icons mt-2 gap-2" *ngIf="screenBreakpoints.init().sm > innerWidth">
         <a
         href="https://www.facebook.com/people/Pani-Komunikolog/100069643473900/"
         rel="noopener"
@@ -20,16 +20,18 @@
         href="https://www.instagram.com/pani_komunikolog/"
         rel="noopener"
         target="_blank"
+        title=""
         ><fa-icon [icon]="faInstagram"></fa-icon>
       </a>
       <a
         href="https://www.tiktok.com/@panikomunikolog"
         rel="noopener"
         target="_blank"
+        title=""
         ><fa-icon [icon]="faTiktok"></fa-icon>
       </a>
-      <a href="https://www.linkedin.com/in/klaudia-katarzy%C5%84ska-97a9b3212" rel="noopener" target="_blank">
-        <fa-icon [icon]="faLinkedin"></fa-icon
+      <a href="https://www.linkedin.com/in/klaudia-katarzy%C5%84ska-97a9b3212" rel="noopener" target="_blank" title="">
+        <fa-icon [icon]="faLinkedin"></fa-icon  
       ></a>
     </div>
 </nav>
