@@ -4,7 +4,7 @@
     box-shadow: -0.4em 0.4em 0 0 $black;
     border-radius: 0.3em;
     border-style: solid;
-    transition: all 1s;
+    transition: all 0.6s;
     width: 12em;
     span {
         font-size: $base-fontSize * 1.5;
@@ -12,12 +12,15 @@
     }
     &:hover {
         background-color: darken($accent,15%);
+        box-shadow: 0.4em 0.4em 0 0 $black;
     }
 
     @include sm{
         padding: 1.5em 3em; 
-        box-shadow: -0.5em 0.6em 0 0 $black;
         width: 15em;
+        &:hover {
+            box-shadow: 0.5em 0.6em 0 0 $black;
+        }
         span {
             font-size: $base-fontSize * 2;
         }

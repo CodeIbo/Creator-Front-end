@@ -2,7 +2,7 @@
 
 
 .navbar {
-  padding: 0.5rem;
+  padding: 0.6rem;
   display: flex;
   position: fixed;
   width: 95%;
@@ -18,9 +18,10 @@
   align-items: center;
   button {
     fa-icon {
-      font-size: 1.3em;
+      
+      font-size: 2em;
       @include sm {
-        font-size: 1.7em;
+        font-size: 2.5em;
       }
     }
   }

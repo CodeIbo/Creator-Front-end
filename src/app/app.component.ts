@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
   faBars = faBars
  
   loadPage = true
-  password = 'developer1flex'
+  preProdAccess = 'developer1flex'
 
   constructor(public screenBreakpoints: screenBreakpointsService,public viewManipulation: viewManipulation){
     this.innerWidth = window.innerWidth
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit{
     ?.split('=')[1]
   }
 
-  simpleLoginAuth = this.getValueFromCookie('validation') === this.password ? this.password : window.prompt('password','')
+  simpleLoginAuth = this.getValueFromCookie('validation') === this.preProdAccess ? this.preProdAccess : window.prompt('password','')
 
   @HostListener('window:resize') onResize() {
     this.innerWidth = window.innerWidth;
@@ -40,7 +40,7 @@ export class AppComponent implements OnInit{
     let time = now.getTime();
     time += 3600 * 1000;
     now.setTime(time);
-    if(this.simpleLoginAuth !== this.password ){
+    if(this.simpleLoginAuth !== this.preProdAccess ){
       this.loadPage = false;
     }
     else{
