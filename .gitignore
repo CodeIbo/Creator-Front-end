@@ -44,3 +44,4 @@ Thumbs.db
 # custom
 
 /src/assets/images
+/src/netlify.toml

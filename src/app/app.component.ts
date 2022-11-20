@@ -3,7 +3,6 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { screenBreakpointsService } from './services/screen-breakpoints.service';
 import { viewManipulation } from './services/view-manipulation.service';
-import { scrollService } from './services/scroll.service';
 
 
 @Component({

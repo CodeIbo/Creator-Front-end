@@ -16,6 +16,14 @@
     }
 
     @include sm{
+        padding: 0.5em 1em; 
+        width: 10em;
+        span {
+            font-size: $base-fontSize * 1.7;
+        }
+    }
+
+    @include md{
         padding: 1.5em 3em; 
         width: 15em;
         &:hover {
