@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,8 @@ import { PodcastSpotifySubsiteComponent } from './dynamic/podcast-spotify-subsit
 import { FullStaticPageComponent } from './static/full-static-page/full-static-page.component';
 import { ErrorNotFoundComponent } from './static/error-not-found/error-not-found.component';
 import { BlogSubsiteComponent } from './dynamic/blog-subsite/blog-subsite.component';
+import { SingleBlogPostComponent } from './dynamic/single-blog-post/single-blog-post.component';
+import { FilterPipe } from './filters/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -26,13 +29,16 @@ import { BlogSubsiteComponent } from './dynamic/blog-subsite/blog-subsite.compon
     PodcastSpotifySubsiteComponent,
     FullStaticPageComponent,
     ErrorNotFoundComponent,
-    BlogSubsiteComponent
+    BlogSubsiteComponent,
+    SingleBlogPostComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

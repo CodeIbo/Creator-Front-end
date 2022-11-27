@@ -1,0 +1,33 @@
+.search-bar{
+    background: rgba($white,0.4);
+    border: none;
+    border-bottom: 2px solid $secondary;
+    font-size: 1.2em;
+    width: 12em;
+    padding: 0.5em 1em;
+    position: relative;
+
+    @include sm {
+        font-size: 1.5em;
+        width: 14em;
+    }
+    @include md {
+        font-size: 1.7em;
+        width: 16em;
+    }
+    @include lg {
+        font-size: 1.9em;
+        width: 18em;
+    }
+    &:focus{
+        outline: none;
+    }
+    .icon {
+        position: absolute;
+        right: 0.5em;
+        transform: scaleX(-1);
+    }
+    input {
+        width: 90%;
+    }
+}

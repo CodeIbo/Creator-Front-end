@@ -1,17 +1,22 @@
 .button {
-    padding: 1em 2em; 
-    background-color: $accent;
-    box-shadow: -0.4em 0.4em 0 0 $black;
     border-radius: 0.3em;
-    border-style: solid;
+    padding: 1em 2em; 
     transition: all 0.6s;
     width: 12em;
+
+    //text 
     span {
-        font-size: $base-fontSize * 1.5;
-        color:$white;
+        display: block;
+        text-align: center;
+        font-size: $base-fontSize * 1.2;
+        line-height: 0.9;
     }
-    &:hover {
-        background-color: darken($accent,15%);
+
+    &-shadow {
+        box-shadow: -0.4em 0.4em 0 0 $black;
+    }
+
+    &-shadow:hover {
         box-shadow: 0.4em 0.4em 0 0 $black;
     }
 
@@ -19,18 +24,33 @@
         padding: 0.5em 1em; 
         width: 10em;
         span {
-            font-size: $base-fontSize * 1.7;
+            font-size: $base-fontSize * 1.4;
         }
     }
 
     @include md{
-        padding: 1.5em 3em; 
-        width: 15em;
-        &:hover {
+        width: 11em;
+        &-shadow:hover {
             box-shadow: 0.5em 0.6em 0 0 $black;
         }
         span {
-            font-size: $base-fontSize * 2;
+            font-size: $base-fontSize * 1.5;
+        }
+    }
+
+    //button colors with hover 
+    @each $key, $val in $colors {
+        &-#{$key}{
+            color:$white;
+            background-color: $val;
+            @if($val == white){
+                span {
+                    color: $black;
+                }
+            }
+        }
+        &-#{$key}:hover{
+            background-color: darken($val,15%);
         }
     }
 }

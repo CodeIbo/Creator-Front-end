@@ -5,6 +5,10 @@
 
 //reset styles
 
+*{
+    box-sizing: border-box;
+}
+
 body {
     background-color: $primary;
     min-height: 90vh;
@@ -108,4 +112,9 @@ p{
     @include md {
         font-size: $base-fontSize * 1.25;
     }
+}
+
+input {
+    all: unset;
+    width: 100%;
 }

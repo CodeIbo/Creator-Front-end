@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiCallback } from 'src/app/services/api-callback.service';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-blog-subsite',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog-subsite.component.scss']
 })
 export class BlogSubsiteComponent implements OnInit {
+  faSearch = faSearch
+  search = '';
 
-  constructor() { }
+  constructor(public _apiResponse: ApiCallback) { }
 
   ngOnInit(): void {
+    
+    
   }
 
 }

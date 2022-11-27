@@ -1,3 +1,22 @@
-<section class="static-page d-flex justify-content-center align-items-center">
-    <h1 class="text-center">Work in progress 👷 📚</h1>
+<section class="static-page pt-5 w-100">
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <div class="search-bar">
+        <input placeholder="Example" type="search" [(ngModel)]="search"/>
+        <button class="icon text-secondary">
+          <fa-icon [icon]="faSearch"></fa-icon>
+        </button>
+      </div>
+    </div>
+    <div class="grid-layout py-2">
+        <article  *ngFor="let post of (_apiResponse.getApi() | filter:search);" class="standard-shadow p-2 bg-secondary text-white preview-article d-flex flex-column justify-content-space-between gap-2">
+            <h2 class="m-0 text-center ">{{post.title}}</h2>
+            <p class="m-0 ">{{post.description}}</p>
+            <div class="d-flex justify-content-flex-end">
+                <a routerLink="{{post.id}}" class="button button-white standard-shadow"><span>Read more</span></a>
+            </div>
+        </article>
+    </div>
+  </div>
 </section>
+
