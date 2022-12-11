@@ -11,7 +11,8 @@
         font-size: $base-fontSize * 1.2;
         line-height: 0.9;
     }
-
+    
+    //shadow
     &-shadow {
         box-shadow: -0.4em 0.4em 0 0 $black;
     }
@@ -24,21 +25,20 @@
         padding: 0.5em 1em; 
         width: 10em;
         span {
-            font-size: $base-fontSize * 1.4;
+            font-size: $base-fontSize * 1.25;
         }
     }
 
     @include md{
-        width: 11em;
         &-shadow:hover {
             box-shadow: 0.5em 0.6em 0 0 $black;
         }
         span {
-            font-size: $base-fontSize * 1.5;
+            font-size: $base-fontSize * 1.35;
         }
     }
 
-    //button colors with hover 
+    //colors
     @each $key, $val in $colors {
         &-#{$key}{
             color:$white;

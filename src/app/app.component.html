@@ -1,10 +1,11 @@
 <div *ngIf="loadPage">
     <nav class="navbar">
-        <button (click)="viewManipulation.toogleView()" class="text-accent"><fa-icon [icon]="faBars" ></fa-icon></button>
+        <button (click)="viewManipulation.toogleView()"
+        #hamburgermenu class="text-accent"><fa-icon [icon]="faBars" ></fa-icon></button>
         <app-iconTab *ngIf="screenBreakpoints.init().sm < innerWidth"></app-iconTab>
     </nav>
     
-    <app-sideNav *ngIf="viewManipulation.showSideBar" @slideInOut></app-sideNav>
+    <app-sideNav *ngIf="viewManipulation.showSideBar" @slideInOut #sidebar ></app-sideNav>
     <router-outlet ></router-outlet>
 
 </div>
