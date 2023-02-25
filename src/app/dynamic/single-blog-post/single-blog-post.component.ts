@@ -16,7 +16,7 @@ export class SingleBlogPostComponent implements OnInit {
 
   ngOnInit(): void {
    this._apiCallback.getApi().forEach(element => {
-    if(element.id.toString() === this.id){
+    if(element.url === this.id){
       this.article = element
     } 
    });
