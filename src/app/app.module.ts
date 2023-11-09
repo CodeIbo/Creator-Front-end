@@ -12,11 +12,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AboutMe } from './static/about-me-section/about-me.component';
 import { ContactSectionComponent } from './static/contact-section/contact-section/contact-section.component';
 import { PodcastSpotifySubsiteComponent } from './dynamic/podcast-spotify-subsite/podcast-spotify-subsite.component';
-import { FullStaticPageComponent } from './static/full-static-page/full-static-page.component';
+import { HomePageComponent } from './static/home-page/home-page.component';
 import { ErrorNotFoundComponent } from './static/error-not-found/error-not-found.component';
 import { BlogSubsiteComponent } from './dynamic/blog-subsite/blog-subsite.component';
 import { SingleBlogPostComponent } from './dynamic/single-blog-post/single-blog-post.component';
 import { FilterPipe } from './filters/filter.pipe';
+import { BlogPrivateComponent } from './Pages/PrivateBlog/blog-private.component';
+import { PublicationsComponent } from './Pages/Publications/publications.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +29,13 @@ import { FilterPipe } from './filters/filter.pipe';
     AboutMe,
     ContactSectionComponent,
     PodcastSpotifySubsiteComponent,
-    FullStaticPageComponent,
+    HomePageComponent,
     ErrorNotFoundComponent,
     BlogSubsiteComponent,
     SingleBlogPostComponent,
-    FilterPipe
+    FilterPipe,
+    BlogPrivateComponent,
+    PublicationsComponent
   ],
   imports: [
     BrowserModule,

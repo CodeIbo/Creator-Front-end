@@ -3,10 +3,12 @@
         <button class="side-nav__button" (click)="viewManipulation.toogleView()" ><fa-icon [icon]="faArrowLeftLong"></fa-icon></button>
     </div>
     <ul class=" d-flex flex-column gap-2 py-1/2 pt-2-sm">
-        <li ><a class="animate-underline"  routerLink="/" (click)="scrollService.scroll('#ja')">O mnie</a></li>
-        <li><a class="animate-underline" routerLink="blog">Blog</a></li>
-        <li><a class="animate-underline" routerLink="podcast">Podcasty</a></li>
-        <li><a class="animate-underline" routerLink="/" (click)="scrollService.scroll('#kontakt')" >Kontakt</a></li>
+        <li ><a class="animate-underline"  routerLink="/" (click)="clickHandler('#ja')">O mnie</a></li>
+        <li><a class="animate-underline" routerLink="komunikacja-medyczna"(click)="clickHandler()">Komunikacja <br> Medyczna</a></li>
+        <li><a class="animate-underline" routerLink="blog"(click)="clickHandler()">Blog</a></li>
+        <li><a class="animate-underline" routerLink="podcast" (click)="clickHandler()">Podcasty</a></li>
+        <li><a class="animate-underline" routerLink="publikacje"(click)="clickHandler()">Publikacje</a></li>
+        <li><a class="animate-underline" routerLink="/" (click)="clickHandler('#kontakt')" >Kontakt</a></li>
     </ul>
     <div class="d-flex flex-column align-items-center w-100 side-nav__icons mt-2 gap-2" *ngIf="screenBreakpoints.init().sm > innerWidth">
         <a

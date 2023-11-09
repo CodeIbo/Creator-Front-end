@@ -2,7 +2,9 @@
     border-radius: 0.3em;
     padding: 1em 2em; 
     transition: all 0.6s;
-    width: 12em;
+    min-width: 12em;
+    display: block;
+    
 
     //text 
     span {
@@ -10,6 +12,18 @@
         text-align: center;
         font-size: $base-fontSize * 1.2;
         line-height: 0.9;
+    }
+
+    &--disabled{
+        background: gray;
+        cursor: not-allowed;
+        opacity: 0.5;
+        text-decoration: none;
+        color:white;
+    }
+
+    &--wide {
+        min-width: 20em;
     }
     
     //shadow
@@ -23,9 +37,12 @@
 
     @include sm{
         padding: 0.5em 1em; 
-        width: 10em;
+        min-width: 10em;
         span {
             font-size: $base-fontSize * 1.25;
+        }
+        &--wide{
+            min-width: 15em;
         }
     }
 
@@ -49,8 +66,11 @@
                 }
             }
         }
-        &-#{$key}:hover{
+        &-#{$key}-darken--hover:hover{
             background-color: darken($val,15%);
+        }
+        &-#{$key}-lighten--hover:hover{
+            background-color: lighten($val,10%);
         }
     }
 }

@@ -8,15 +8,15 @@
     position: relative;
 
     @include sm {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
         width: 16em;
     }
     @include md {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         width: 18em;
     }
     @include lg {
-        font-size: 1.9rem;
+        font-size: 1.7rem;
         width: 20em;
     }
     &:focus{

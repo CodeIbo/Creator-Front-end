@@ -1,0 +1,72 @@
+@import './breakpoints';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+h1,.h1 {
+  font-size: $base-fontSize * 1.25;
+  margin-bottom: 2rem;
+  @include xs {
+      font-size: $base-fontSize * 1.75;
+  }
+  @include sm {
+      font-size: $base-fontSize * 2.5;
+  }
+  @include md {
+      font-size: $base-fontSize * 3;
+  }
+}
+
+h2,.h2{
+  font-size: $base-fontSize * 1.15;
+  margin-bottom: 1rem;
+  @include xs {
+      font-size: $base-fontSize * 1.55;
+  }
+  @include sm {
+      font-size: $base-fontSize * 1.8;
+  }
+  @include md {
+      font-size: $base-fontSize * 2.5;
+  }
+}
+
+h3,.h3{
+  font-size: $base-fontSize * 1.10;
+  margin-bottom: 1rem;
+  @include xs {
+      font-size: $base-fontSize * 1.45;
+  }
+  @include sm {
+      font-size: $base-fontSize * 1.6;
+  }
+  @include md {
+      font-size: $base-fontSize * 2.3;
+  }
+}
+h4,.h4 {
+  font-size: $base-fontSize * 1.05;
+  margin-bottom: 1rem;
+  @include xs {
+      font-size: $base-fontSize * 1.35;
+  }
+  @include sm {
+      font-size: $base-fontSize * 1.4;
+  }
+  @include md {
+      font-size: $base-fontSize * 2.2;
+  }
+}
+
+p{
+  font-size: $base-fontSize * 0.75;
+  line-height: 1.75em;
+  margin-bottom: 1rem;
+  @include xs {
+      font-size: $base-fontSize * 0.85;
+  }
+  @include sm {
+      font-size: $base-fontSize * 0.95;
+  }
+  @include md {
+      font-size: $base-fontSize * 1.25;
+  }
+}

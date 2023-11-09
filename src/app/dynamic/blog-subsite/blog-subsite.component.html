@@ -1,19 +1,20 @@
-<section class="static-page pt-5 w-100">
+<section class="static-page">
   <div class="container">
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center flex-column align-items-center">
+      <h1 class="text-center title">Komunikacji Medyczna</h1>
       <div class="search-bar">
-        <input placeholder="Example" type="search" [(ngModel)]="search"/>
+        <input placeholder="Wyszukaj" type="search" [(ngModel)]="search"/>
         <button class="icon text-secondary">
           <fa-icon [icon]="faSearch"></fa-icon>
         </button>
       </div>
     </div>
     <div class="grid-layout py-2">
-        <article  *ngFor="let post of (_apiResponse.getApi() | filter:search);" class="standard-shadow p-2 bg-secondary text-white preview-article d-flex flex-column justify-content-space-between gap-2">
-            <h2 class="m-0 text-center ">{{post.title}}</h2>
-            <p class="m-0 ">{{post.description}}</p>
+        <article  *ngFor="let post of (apiResponse.getApi('komunikacjaMedyczna') | blogFilter:search);" class="standard-shadow p-2 bg-secondary text-white preview-article d-flex flex-column justify-content-space-between gap-2">
+            <h2 class="m-0 text-center ">{{post.post_name}}</h2>
+            <p class="m-0 ">{{lodash.truncate(post.meta_data_description,{'length': 250, 'separator':' '})}}</p>
             <div class="d-flex justify-content-flex-end">
-                <a routerLink="{{post.url}}" class="button button-white standard-shadow"><span>Read more</span></a>
+                <a [routerLink]="[post.post_url]"  class="button button-accent standard-shadow"><span>Czytaj</span></a>
             </div>
         </article>
     </div>

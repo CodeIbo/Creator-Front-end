@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MetaService } from 'src/app/services/metaService.service';
 
 @Component({
   selector: 'app-podcast-spotify-subsite',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PodcastSpotifySubsiteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private metaService: MetaService) { 
+    this.metaService.updateMetaInfo("Podcasty","Posłuchaj moich wskazówek dotyczących tego, jak skutecznie się komunikować. O komunikacji opowiadam sama na przykładach z mojego życia, ale również zapraszam do rozmowy gości z zakresu różnych dziedzin.","Pani Komunikolog","komunikacja, rozmowa, podcast o komunikacji, komunikat, relacje, komunikacja medyczna, komunikacja interpersonalna")
+  }
 
   ngOnInit(): void {
   }

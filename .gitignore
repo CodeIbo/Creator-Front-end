@@ -45,4 +45,4 @@ Thumbs.db
 
 /src/assets/images
 /src/netlify.toml
-/src/app/data/example-data.ts
+/src/app/data

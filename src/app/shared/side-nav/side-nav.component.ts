@@ -17,9 +17,18 @@ export class NavBarComponent {
     faTiktok = faTiktok
     faLinkedin = faLinkedin
     public innerWidth: number | any;
-    
+
     constructor(public screenBreakpoints: screenBreakpointsService,public viewManipulation: viewManipulation, public scrollService:scrollService){
       this.innerWidth = window.innerWidth
+      
+    }
+
+
+    clickHandler = (anchor?:string) =>{
+      if(anchor){
+        this.scrollService.scroll(anchor)
+      }
+      this.viewManipulation.toogleView()
     }
     
     @HostListener('window:resize') onResize() {

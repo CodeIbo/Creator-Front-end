@@ -10,22 +10,27 @@
   grid-template-columns: 1fr;
   gap:2em;
   justify-items: center;
-  @include md {
+  @include lg {
     grid-template-columns:repeat(2, 1fr);
     gap:1.5em;
   }
 }
 
+.title{
+  font-size: 2.5rem;
+}
+
 .preview-article{
   border-radius: $base-round;
   width: 100%;
-  max-width: 30em;
+  max-width: 30rem;
+  transition: all 0.65s ease-in-out;
+  &:hover{
+    scale: 1.05;
+  }
   h2{
-    font-size:2em;
-    transition: all 0.5s ease-in-out;
-    &:hover{
-      scale: 1.1;
-    }
+    font-size:1.75rem;
+    
   }
   p{
     font-size: 1.1em;

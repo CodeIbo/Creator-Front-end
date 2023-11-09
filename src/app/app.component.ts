@@ -16,46 +16,19 @@ export class AppComponent implements OnInit{
   @ViewChild('hamburgermenu') hamburgerMenu: ElementRef | undefined;
   @ViewChild('sidebar',{ static:false }) sidebar: ElementRef | undefined;
   
-  loadPage = true
-  preProdAccess = 'developer1flex'
 
   constructor(public screenBreakpoints: screenBreakpointsService,public viewManipulation: viewManipulation, public renderer: Renderer2){
     this.innerWidth = window.innerWidth
 
-    this.renderer.listen('window','click',(e:Event)=>{
-      console.log(this.sidebar?.nativeElement)
-    })
   }
 
-  getValueFromCookie = (name:string) => {
-    return document.cookie
-    .split('; ')
-    .find((row) => row.startsWith(`${name}=`))
-    ?.split('=')[1]
-  }
 
-  simpleLoginAuth = this.getValueFromCookie('validation') === this.preProdAccess ? this.preProdAccess : window.prompt('password','')
 
   @HostListener('window:resize') onResize() {
     this.innerWidth = window.innerWidth;
   };
 
   ngOnInit(): void {
-    let now = new Date();
-    let time = now.getTime();
-    time += 3600 * 1000;
-    now.setTime(time);
-    if(this.simpleLoginAuth !== this.preProdAccess ){
-      this.loadPage = false;
-    }
-    else{
-      document.cookie = 
-      'validation=' + 'developer1flex' + 
-      '; expires=' + now.toUTCString() + 
-      '; path=/';
-      this.loadPage = true;
-    }
-
   }
   
 

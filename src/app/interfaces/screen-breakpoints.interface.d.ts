@@ -1,4 +1,4 @@
-export default interface screenBreakpointsInterface {
+export default interface screenBreakpoints {
     xs: number;
     sm: number;
     md: number;

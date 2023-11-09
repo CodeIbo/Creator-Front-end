@@ -93,17 +93,17 @@ $utilities: (
     
     @if (string.slice($prefix, 2) == "x") {
       .#{$prefix}-#{$k} {
-        #{string.slice($property,1,$lenghtToSlice - 1)}-left: $v;
-        #{string.slice($property,1,$lenghtToSlice - 1)}-right: $v;
+        #{string.slice($property,1,$lenghtToSlice - 1)}-left: $v !important;
+        #{string.slice($property,1,$lenghtToSlice - 1)}-right: $v !important;
       }
     } @else if (string.slice($prefix, 2) == "y") {
       .#{$prefix}-#{$k} {
-        #{string.slice($property,1,$lenghtToSlice - 1)}-top: $v;
-        #{string.slice($property,1,$lenghtToSlice - 1)}-bottom: $v;
+        #{string.slice($property,1,$lenghtToSlice - 1)}-top: $v !important;
+        #{string.slice($property,1,$lenghtToSlice - 1)}-bottom: $v !important;
       }
     } @else {
       .#{$prefix}-#{$k} {
-        #{$property}: $v;
+        #{$property}: $v !important;
       }
     }
   }
@@ -119,17 +119,17 @@ $utilities: (
         $lenghtToSlice: string.length($property);
         @if (string.slice($prefix, 2) == "x") {
           .#{$prefix}-#{$k}-#{$key-b} {
-            #{string.slice($property,1,$lenghtToSlice - 1)}-left: $v;
-            #{string.slice($property,1,$lenghtToSlice - 1)}-right: $v;
+            #{string.slice($property,1,$lenghtToSlice - 1)}-left: $v !important;
+            #{string.slice($property,1,$lenghtToSlice - 1)}-right: $v !important;
           }
         } @else if (string.slice($prefix, 2) == "y") {
           .#{$prefix}-#{$k}-#{$key-b} {
-            #{string.slice($property,1,$lenghtToSlice - 1)}-top: $v;
-            #{string.slice($property,1,$lenghtToSlice - 1)}-bottom: $v;
+            #{string.slice($property,1,$lenghtToSlice - 1)}-top: $v !important;
+            #{string.slice($property,1,$lenghtToSlice - 1)}-bottom: $v !important;
           }
         } @else {
           .#{$prefix}-#{$k}-#{$key-b} {
-            #{$property}: $v;
+            #{$property}: $v !important;
           }
         }
       }
