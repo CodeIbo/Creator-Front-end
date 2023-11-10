@@ -16,6 +16,10 @@
   justify-content: space-between;
   align-items: center;
   button {
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
     fa-icon {
       
       font-size: 2em;

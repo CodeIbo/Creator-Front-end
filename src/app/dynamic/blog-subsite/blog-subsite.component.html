@@ -4,7 +4,7 @@
       <h1 class="text-center title">Komunikacji Medyczna</h1>
       <div class="search-bar">
         <input placeholder="Wyszukaj" type="search" [(ngModel)]="search"/>
-        <button class="icon text-secondary">
+        <button class="icon text-accent" title="Szukaj">
           <fa-icon [icon]="faSearch"></fa-icon>
         </button>
       </div>
@@ -14,7 +14,7 @@
             <h2 class="m-0 text-center ">{{post.post_name}}</h2>
             <p class="m-0 ">{{lodash.truncate(post.meta_data_description,{'length': 250, 'separator':' '})}}</p>
             <div class="d-flex justify-content-flex-end">
-                <a [routerLink]="[post.post_url]"  class="button button-accent standard-shadow"><span>Czytaj</span></a>
+                <a [routerLink]="[post.post_url]"  class="button button-accent standard-shadow" title="Przejdź do artykułu"><span>Czytaj</span></a>
             </div>
         </article>
     </div>

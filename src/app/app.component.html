@@ -1,7 +1,7 @@
 <div>
     <nav class="navbar">
         <button (click)="viewManipulation.toogleView()"
-        #hamburgermenu class="text-accent"><fa-icon [icon]="faBars" ></fa-icon></button>
+        #hamburgermenu class="text-accent" title="Otwórz menu"><fa-icon [icon]="faBars" ></fa-icon></button>
         <app-iconTab *ngIf="screenBreakpoints.init().sm < innerWidth"></app-iconTab>
     </nav>
     
