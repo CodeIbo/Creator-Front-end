@@ -7,6 +7,7 @@ import { BlogSubsiteComponent } from './dynamic/blog-subsite/blog-subsite.compon
 import { SingleBlogPostComponent } from './dynamic/single-blog-post/single-blog-post.component';
 import { BlogPrivateComponent } from './Pages/PrivateBlog/blog-private.component';
 import { PublicationsComponent } from './Pages/Publications/publications.component';
+import { ZabrzankaComponent } from './Pages/Zabrzanka/zabrzanka.component';
 
 const routes: Routes = [
   {path:'',component: HomePageComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'komunikacja-medyczna',component: BlogSubsiteComponent},
   {path:'komunikacja-medyczna/:id',component: SingleBlogPostComponent},
   {path: 'publikacje',component: PublicationsComponent},
+  {path: 'publikacje/zabrzanka', component:ZabrzankaComponent},
   {path:'**', component: ErrorNotFoundComponent}
 ];
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MetaService } from 'src/app/services/metaService.service';
 
 @Component({
-  selector: 'app-podcast-spotify-subsite',
+  selector: 'app-publications',
   templateUrl: './publications.component.html',
   styleUrls: ['./publications.component.scss']
 })

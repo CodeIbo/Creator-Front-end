@@ -19,6 +19,8 @@ import { SingleBlogPostComponent } from './dynamic/single-blog-post/single-blog-
 import { FilterPipe } from './filters/filter.pipe';
 import { BlogPrivateComponent } from './Pages/PrivateBlog/blog-private.component';
 import { PublicationsComponent } from './Pages/Publications/publications.component';
+import { ZabrzankaComponent } from './Pages/Zabrzanka/zabrzanka.component';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { PublicationsComponent } from './Pages/Publications/publications.compone
     SingleBlogPostComponent,
     FilterPipe,
     BlogPrivateComponent,
-    PublicationsComponent
+    PublicationsComponent,
+    ZabrzankaComponent
   ],
   imports: [
     BrowserModule,
