@@ -20,6 +20,7 @@ import { FilterPipe } from './filters/filter.pipe';
 import { BlogPrivateComponent } from './Pages/PrivateBlog/blog-private.component';
 import { PublicationsComponent } from './Pages/Publications/publications.component';
 import { ZabrzankaComponent } from './Pages/Zabrzanka/zabrzanka.component';
+import { TedxComponent } from './Pages/tedx/tedx.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { ZabrzankaComponent } from './Pages/Zabrzanka/zabrzanka.component';
     FilterPipe,
     BlogPrivateComponent,
     PublicationsComponent,
-    ZabrzankaComponent
+    ZabrzankaComponent,
+    TedxComponent
   ],
   imports: [
     BrowserModule,

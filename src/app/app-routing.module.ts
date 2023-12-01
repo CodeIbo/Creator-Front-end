@@ -8,6 +8,8 @@ import { SingleBlogPostComponent } from './dynamic/single-blog-post/single-blog-
 import { BlogPrivateComponent } from './Pages/PrivateBlog/blog-private.component';
 import { PublicationsComponent } from './Pages/Publications/publications.component';
 import { ZabrzankaComponent } from './Pages/Zabrzanka/zabrzanka.component';
+import { TedxComponent } from './Pages/tedx/tedx.component';
+import { Mtw4Component } from './Pages/Mtw4/mtw4.component';
 
 const routes: Routes = [
   {path:'',component: HomePageComponent },
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path:'komunikacja-medyczna/:id',component: SingleBlogPostComponent},
   {path: 'publikacje',component: PublicationsComponent},
   {path: 'publikacje/zabrzanka', component:ZabrzankaComponent},
+  {path: 'wystąpienie-tedx', component:TedxComponent},
+  {path: 'mtw4', component:Mtw4Component},
   {path:'**', component: ErrorNotFoundComponent}
 ];
 

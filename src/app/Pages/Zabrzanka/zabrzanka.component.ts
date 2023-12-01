@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-podcast-spotify-subsite',
+  selector: 'app-zabrzanka',
   templateUrl: './zabrzanka.component.html',
   styleUrls: ['./zabrzanka.component.scss']
 })
