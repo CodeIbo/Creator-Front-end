@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+
+.blog_post{
+  &__info{
+    display: block;
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  &__img{
+    text-align: center;
+    img{
+      width: 40rem;
+    }
+  }
+  &__article{
+      text-shadow: 0.15px 0.15px black;
+  }
+}

@@ -1,0 +1,19 @@
+
+<section class="static-page py-3" >
+    <div class="container">
+        <picture class="py-1 d-block blog_post__img">
+            <img *ngIf="article.image" [src]="article.image" class="" alt="blog img">
+        </picture>
+        
+        <h1 class="text-center">{{article.post_name}}</h1>
+        <small class="font-weight-700 blog_post__info">
+            <span>{{article.publication_date}}</span> | <span class="text-accent">{{article.post_author}}</span>
+        </small>
+        <p class="font-weight-700">{{article.lead}}</p>
+        <article [innerHTML]="article.post_content" class="blog_post__article">
+
+        </article>
+    </div>
+    
+</section>
+

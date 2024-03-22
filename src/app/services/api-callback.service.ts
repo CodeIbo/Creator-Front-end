@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import apiTest from "../data/data.json";
 
-type ApiKeys = "komunikacjaMedyczna"
+type ApiKeys = "komunikacjaMedyczna" | "ulatwiamKomunikacje"
 
 
 @Injectable({ providedIn: 'root' })
