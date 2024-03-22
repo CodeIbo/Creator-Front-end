@@ -1,12 +1,18 @@
-
 <nav class="navbar">
-    <button (click)="viewManipulation.toogleView()"
-    #hamburgermenu class="text-accent" title="Otwórz menu"><fa-icon [icon]="faBars" ></fa-icon></button>
-    <app-iconTab *ngIf="screenBreakpoints.init().sm < innerWidth"></app-iconTab>
+  <button
+    (click)="viewManipulation.toogleView()"
+    #hamburgermenu
+    class="text-accent"
+    title="Otwórz menu"
+  >
+    <fa-icon [icon]="faBars"></fa-icon>
+  </button>
+  <app-iconTab *ngIf="screenBreakpoints.init().sm < innerWidth"></app-iconTab>
 </nav>
 
-<app-sideNav *ngIf="viewManipulation.showSideBar" @slideInOut #sidebar ></app-sideNav>
-<router-outlet ></router-outlet>
-
-
-
+<app-sideNav
+  *ngIf="viewManipulation.showSideBar"
+  @slideInOut
+  #sidebar
+></app-sideNav>
+<router-outlet></router-outlet>
