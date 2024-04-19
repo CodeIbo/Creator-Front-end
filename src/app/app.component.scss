@@ -1,4 +1,4 @@
-@import '../assets/scss/breakpoints';
+@import "../assets/scss/breakpoints";
 
 .navbar {
   padding: 0.6rem;
@@ -8,16 +8,15 @@
   z-index: 1;
   @include sm {
     padding: 1rem;
-    
   }
-  @include lg{
+  @include lg {
     width: 98%;
   }
   justify-content: space-between;
   align-items: center;
   button {
     fa-icon {
-      
+      pointer-events: none;
       font-size: 2em;
       @include sm {
         font-size: 2.5em;
@@ -25,4 +24,3 @@
     }
   }
 }
-
