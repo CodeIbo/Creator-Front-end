@@ -1,13 +1,16 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'blogFilter',
 })
 export class FilterPipe implements PipeTransform {
+  transform(data: any, searchValue: string, valuesToSearch: string[]) {
+    if (!searchValue) return data;
 
-  transform(value: any, searchValue: string): any {
-    if (!searchValue) return value;
-    return value.filter((v:any) => v.title.toLowerCase().indexOf(searchValue.toLowerCase()) > -1 || v.description.toLowerCase().indexOf(searchValue.toLowerCase()) > -1) 
+    return data.filter((v: any) => {
+      return valuesToSearch.some((dataName) => {
+        return v[dataName].toString().toLowerCase().indexOf(searchValue) > -1;
+      });
+    });
   }
-
 }
