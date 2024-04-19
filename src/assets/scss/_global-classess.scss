@@ -1,30 +1,61 @@
-
 //link
 
-.animate-underline{
-    position: relative;
-    &:after{
-        content: '';
-        background-color:inherit;
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        transform-origin: bottom right;
-        transition: transform 0.5s ease-out;
-    }
-    &:hover:after{
-        transform: scaleX(1);
-        transform-origin: bottom left;
-    }
+.animate-underline {
+  position: relative;
+  font-style: italic;
+  &:after {
+    content: "";
+    background-color: $accent;
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+  }
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 }
 
-.static-page{
-    min-height: 85vh;
+.static-page {
+  padding: 4rem 0;
+  min-height: 85vh;
+  overflow-x: hidden;
+  @include sm {
+    padding: 6rem 0;
+  }
 }
 
-.standard-shadow{
-    box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
+.standard-shadow {
+  box-shadow: rgba(0, 0, 0, 0.16) 14px 12px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.underline {
+  background-size: 1px 1em;
+  box-shadow: inset 0 -0.01em #000;
+  display: inline;
+  transition: box-shadow 0.3s;
+}
+
+hr.dash {
+  border: none;
+  height: 1px;
+  width: 30%;
+  margin-left: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    #000,
+    #000 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+.classic-list {
+  list-style: disc !important;
+  padding-left: 2rem;
 }

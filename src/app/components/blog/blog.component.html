@@ -1,0 +1,39 @@
+<section class="static-page pt-5 w-100">
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <div class="search-bar">
+        <h1 class="text-center title">{{ blog?.blog_title }}</h1>
+        <input placeholder="Example" type="search" [(ngModel)]="search" />
+        <button class="icon text-secondary">
+          <fa-icon [icon]="faSearch"></fa-icon>
+        </button>
+      </div>
+    </div>
+    <div class="grid-layout py-2">
+      <ng-container *ngIf="articles.length > 0; else skeletonBlock">
+        <article
+          *ngFor="
+            let post of articles
+              | sortByDate : 'date'
+              | blogFilter : search : ['article_title', 'lead']
+          "
+          class="standard-shadow p-2 bg-secondary text-white preview-article d-flex flex-column justify-content-space-between gap-2"
+        >
+          <h2 class="m-0 text-center">{{ post.article_title }}</h2>
+          <p class="m-0">{{ post.lead }}</p>
+          <div class="d-flex justify-content-flex-end">
+            <a
+              routerLink="{{ post.url }}"
+              [state]="{ id: post.id }"
+              class="button button-accent standard-shadow"
+              ><span>Read more</span></a
+            >
+          </div>
+        </article>
+      </ng-container>
+      <ng-template #skeletonBlock>
+        This content is displayed if isVisible is false.
+      </ng-template>
+    </div>
+  </div>
+</section>

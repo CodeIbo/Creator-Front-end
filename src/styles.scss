@@ -1,6 +1,10 @@
+@import './assets/scss/reset.scss';
+
 @import './assets/scss/functions';
 
 @import './assets/scss/variabless.scss';
+
+@import './assets/scss/typography.scss';
 
 @import './assets/scss/general-styles.scss';
 
@@ -18,4 +22,6 @@
 
 @import './assets/scss/button.scss';
 
-@import './assets/scss/input';
+@import './assets/scss/input.scss';
+
+
