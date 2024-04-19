@@ -1,12 +1,30 @@
-import { Injectable } from "@angular/core";
-import apiTest from "../data/example-data";
-
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class ApiCallback {
-    
-    getApi(){
-        return apiTest
+  private baseUrl = environment.apiUrl;
+  constructor(private http: HttpClient) {}
+  fetchData(
+    endpoint: string,
+    params?: { [param: string]: string | string[] }
+  ): Observable<any> {
+    const url = `${this.baseUrl}/${endpoint}`;
+    let httpParams = new HttpParams();
+    if (params) {
+      Object.keys(params).forEach((key) => {
+        const value = params[key];
+        if (Array.isArray(value)) {
+          value.forEach((item) => {
+            httpParams = httpParams.append(key, item.toString());
+          });
+        } else {
+          httpParams = httpParams.set(key, value.toString());
+        }
+      });
     }
+    return this.http.get(url, { params: httpParams });
+  }
 }
-
