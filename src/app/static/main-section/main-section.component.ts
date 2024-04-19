@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { MetaService } from "src/app/services/metaService.service";
 
 @Component({
     selector:'app-main-section',
@@ -7,6 +8,11 @@ import { Component } from "@angular/core";
     
 })
 export class MainSection {
+    constructor(
+        private metaService: MetaService
+    ){
+        
+    }
 
 }
 
