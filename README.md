@@ -1,27 +1,41 @@
-# KlaudiaPortfolio
+# Creator777 - Full Stack Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
+> The goal of application was create ecosystem which one can create content to pages without deploying changes and be scalable as easy as possible. Stack of application include Backend ( **Mysql 8.033** , **Node.js & express** suported via **sequelizer** ). Admin Panel ( **React 18.2** ). Front-End ( **Angular 14.06** ) . Stack is [dockerized](https://www.docker.com/ "dockerized"), for more accessability in diffrent enviroment. Every section is described in separate repository
 
-## Development server
+1. [Panel Admin - Gtihub](https://github.com/Ibonom/BlogApi)
+2. [Front-end - Gtihub](https://github.com/Ibonom/BlogPanel)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<br>
 
-## Code scaffolding
+# Description Front-End (Angular-app)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This project is a dynamic Angular front-end application that fully generates its content based on instructions from an API. It allows HTML injection and the incorporation of pre-defined components with Inputs to tailor each component to the needs of specific subpages. The entire project is designed to ensure that HTML tags are styled exclusively using predefined CSS classes, enhancing both the aesthetic uniformity and the maintainability of the codebase.
 
-## Build
+### Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Dynamic Content Generation:** All content is dynamically generated based on API responses.
+- **HTML Injection:** A key feature of the application is its ability to handle HTML injections not just with standard HTML tags, but also with custom tags specific to this application, such as `<app-slider>`. When these custom tags are injected, they are rendered and can be fully functional with any properties passed to the component.
+- **Class-only**: Styling: All styling is achieved using CSS classes, ensuring a clean and consistent look across all pages.
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Step by Step
 
-## Running end-to-end tests
+1. Clone the repository:&nbsp; `git clone [repository-url]`
+2. Create file **.env** based on **env.example** and fill all positions (:heavy_exclamation_mark:Important). If you don't have install [Docker Engine](https://docs.docker.com/get-docker/)
+3. Create containers based on docker-compose.yml:&nbsp; `docker compose up`
+4. Attach shell to container **blogfrontend**:&nbsp; `docker exec -it `
+5. Install dependencies
+6. Start panel:&nbsp; `npm start`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## TODO
 
-## Further help
+- [ ] **Enhanced Handling of Injected Links**: Implement a mechanism to ensure that links added through HTML injection are fully supported within the Angular ecosystem. This will enhance navigation consistency and integration with Angular's routing capabilities.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [ ] **Predefined Color and Style Themes**: Develop several predefined color schemes and page styles that can be easily swapped in a single SCSS file. This feature will allow for quick visual customization and consistency across the application.
+
+- [ ] **Expansion of Injectable Components**: Increase the variety of components that can be used within injected HTML. This expansion will provide more flexibility in customizing content dynamically and enhance the application’s interactivity.
+
+- [ ] **Writing Tests**: Develop and write tests to ensure all components function correctly and meet expected behaviors. This will improve reliability and stability across the application.
+
+- [ ] **Application Caching**: Implement caching strategies to reduce the number of API requests. This will improve the application's performance and user experience by decreasing load times and preserving bandwidth.

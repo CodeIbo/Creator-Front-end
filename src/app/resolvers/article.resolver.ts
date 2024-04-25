@@ -21,25 +21,28 @@ export class ArticleResolver implements Resolve<any> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any> {
-    const currentState = this.router.getCurrentNavigation()?.extras.state;
-    const id: string | null = currentState ? currentState['id'] : null;
-    if (!id) {
+    const articleUrl = route.paramMap.get('article-url');
+    if (!articleUrl) {
       this.router.navigate(['/not-found']);
       return EMPTY;
     }
-    return this.apiCallback.fetchData(`article/${id}`).pipe(
-      map((data: ResponseTypedData<ArticlesAttributes>) => {
-        const article = data.data;
-        if (isEmpty(data.data)) {
+    return this.apiCallback
+      .fetchData('article/key', {
+        url: articleUrl,
+      })
+      .pipe(
+        map((data: ResponseTypedData<ArticlesAttributes>) => {
+          const article = data.data;
+          if (isEmpty(data.data)) {
+            this.router.navigate(['/not-found']);
+            return EMPTY;
+          }
+          return article;
+        }),
+        catchError((error) => {
           this.router.navigate(['/not-found']);
           return EMPTY;
-        }
-        return article;
-      }),
-      catchError((error) => {
-        this.router.navigate(['/not-found']);
-        return EMPTY;
-      })
-    );
+        })
+      );
   }
 }
