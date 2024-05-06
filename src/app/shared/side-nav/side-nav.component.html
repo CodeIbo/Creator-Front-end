@@ -1,6 +1,4 @@
-<nav
-  class="side-nav bg-secondary px-2 text-white pb-2"
->
+<nav class="side-nav bg-secondary px-2 text-white pb-2">
   <div class="py-2 pt-2-sm pb-0-sm text-center">
     <button
       class="side-nav__button"
@@ -20,6 +18,7 @@
               : menuItem.url
           "
           class="animate-underline"
+          (click)="viewManipulation.toogleView()"
           >{{ menuItem.label }}</a
         >
       </li>

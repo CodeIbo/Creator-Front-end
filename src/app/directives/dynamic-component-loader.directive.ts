@@ -6,6 +6,7 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { SliderComponent } from '../components/slider/slider.component';
+import { linkService } from '@services/link.service';
 
 @Directive({
   selector: '[appComponentLoader]',
@@ -15,7 +16,8 @@ export class DynamicComponentLoaderDirective implements OnInit {
 
   constructor(
     private viewContainerRef: ViewContainerRef,
-    private el: ElementRef
+    private el: ElementRef,
+    private linkService: linkService
   ) {}
 
   ngOnInit() {
@@ -25,6 +27,7 @@ export class DynamicComponentLoaderDirective implements OnInit {
   loadComponent() {
     let parentComponent = this.el.nativeElement;
     if (parentComponent) {
+      this.linkService.internalLinksHandler(parentComponent);
       parentComponent
         .querySelectorAll('angular-component')
         .forEach((element: Element) => {
