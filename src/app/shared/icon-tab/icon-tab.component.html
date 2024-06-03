@@ -1,16 +1,14 @@
 <section
+  *ngIf="smArray.length > 0"
   class="icon-section standard-shadow p-1/2 bg-white p-3/4-xs p-1-md d-flex-sm justify-content-space-around align-items-center text-accent"
 >
-  <a href="https://www.facebook.com" rel="noopener" target="_blank" title=""
-    ><fa-icon [icon]="faFacebook"></fa-icon>
-  </a>
-  <a href="https://www.instagram.com" rel="noopener" target="_blank"
-    ><fa-icon [icon]="faInstagram"></fa-icon>
-  </a>
-  <a href="https://www.tiktok.com" rel="noopener" target="_blank"
-    ><fa-icon [icon]="faTiktok"></fa-icon>
-  </a>
-  <a href="https://www.linkedin.com" rel="noopener" target="_blank">
-    <fa-icon [icon]="faLinkedin"></fa-icon
-  ></a>
+  <ng-container *ngFor="let smItem of smArray">
+    <a
+      [href]="smItem.link"
+      rel="noopener"
+      target="_blank"
+      [title]="smItem.title"
+      ><fa-icon [icon]="SMService.socialMediaIcons[smItem.icon]"></fa-icon>
+    </a>
+  </ng-container>
 </section>

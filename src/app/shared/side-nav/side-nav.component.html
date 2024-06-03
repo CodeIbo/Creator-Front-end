@@ -18,7 +18,7 @@
               : menuItem.url
           "
           class="animate-underline"
-          (click)="viewManipulation.toogleView()"
+          (click)="clickHandler(menuItem.scroll_target)"
           >{{ menuItem.label }}</a
         >
       </li>
@@ -29,17 +29,14 @@
     class="d-flex flex-column align-items-center w-100 side-nav__icons mt-2 gap-2"
     *ngIf="screenBreakpoints.init().sm > innerWidth"
   >
-    <a href="https://www.facebook.com/" rel="noopener" target="_blank" title=""
-      ><fa-icon [icon]="faFacebook"></fa-icon>
-    </a>
-    <a href="https://www.instagram.com/" rel="noopener" target="_blank" title=""
-      ><fa-icon [icon]="faInstagram"></fa-icon>
-    </a>
-    <a href="https://www.tiktok.com/" rel="noopener" target="_blank" title=""
-      ><fa-icon [icon]="faTiktok"></fa-icon>
-    </a>
-    <a href="https://www.linkedin.com/" rel="noopener" target="_blank" title="">
-      <fa-icon [icon]="faLinkedin"></fa-icon
-    ></a>
+    <ng-container *ngFor="let smItem of smArray">
+      <a
+        [href]="smItem.link"
+        rel="noopener"
+        target="_blank"
+        [title]="smItem.title"
+        ><fa-icon [icon]="SMService.socialMediaIcons[smItem.icon]"></fa-icon>
+      </a>
+    </ng-container>
   </div>
 </nav>

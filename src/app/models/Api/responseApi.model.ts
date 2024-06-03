@@ -14,14 +14,14 @@ export type ApiCallback =
   | MenuAttributes;
 
 export interface ResponseUntypedData {
-  data?: ApiCallback[] | ApiCallback;
+  data?: ApiCallback;
   httpStatus: string;
   message: string;
   statusCode: number;
   timeStamp: string;
 }
 export interface ResponseTypedData<T = ApiCallback> {
-  data?: T[] | T;
+  data?: T;
   httpStatus: string;
   message: string;
   statusCode: number;
