@@ -41,7 +41,7 @@ export class BlogComponent implements OnInit {
           });
         })
       )
-      .subscribe((fetchedArticles: ResponseTypedData<ArticlesAttributes>) => {
+      .subscribe((fetchedArticles: ResponseTypedData<ArticlesAttributes[]>) => {
         this.isDataArray = isArray(fetchedArticles.data);
         if (isArray(fetchedArticles.data)) {
           this.articles = fetchedArticles.data;
