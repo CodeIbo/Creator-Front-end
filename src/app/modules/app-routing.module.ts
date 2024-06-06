@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from '../static/home-page/home-page.component';
+import { HomePageComponent } from '../client/pages/home/home-page.component';
 import { PodcastSpotifySubsiteComponent } from '../dynamic/podcast-spotify-subsite/podcast-spotify-subsite.component';
 import { ErrorNotFoundComponent } from '../static/error-not-found/error-not-found.component';
 import { apiRoutes } from './api-routing.module';

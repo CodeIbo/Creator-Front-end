@@ -9,7 +9,7 @@ import { SMIconsComponent } from './shared/sm-icons/icon-tab.component';
 import { NavBarComponent } from './shared/side-nav/side-nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PodcastSpotifySubsiteComponent } from './dynamic/podcast-spotify-subsite/podcast-spotify-subsite.component';
-import { HomePageComponent } from './static/home-page/home-page.component';
+import { HomePageComponent } from './client/pages/home/home-page.component';
 import { ErrorNotFoundComponent } from './static/error-not-found/error-not-found.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { ArticleComponent } from './components/blog/article/article.component';

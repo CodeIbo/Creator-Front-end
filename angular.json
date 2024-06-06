@@ -19,7 +19,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/klaudia-portfolio",
-            "index": "src/index.html",
+            "index": "src/app/client/pages/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
