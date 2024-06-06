@@ -4,13 +4,13 @@ import {
   ElementRef,
   HostListener,
   OnInit,
-  Renderer2,
   ViewChild,
 } from '@angular/core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { screenBreakpointsService } from './services/screen-breakpoints.service';
 import { viewManipulation } from './services/view-manipulation.service';
 import 'zone.js';
+import { Icons } from '@services/icons.service';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
   constructor(
     public screenBreakpoints: screenBreakpointsService,
     public viewManipulation: viewManipulation,
-    public renderer: Renderer2
+    public icons: Icons
   ) {
     this.innerWidth = window.innerWidth;
   }

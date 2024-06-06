@@ -1,0 +1,16 @@
+<ul
+  [class]="'d-flex gap-2-lg gap-1-md menu ' + cssClass"
+  *ngIf="menu.length > 0"
+>
+  <li *ngFor="let menuItem of menu" class="text-center">
+    <a
+      [routerLink]="
+        menuItem.page_category === 'blog'
+          ? 'blog/' + menuItem.url
+          : menuItem.url
+      "
+      class="animate-underline"
+      >{{ menuItem.label }}</a
+    >
+  </li>
+</ul>

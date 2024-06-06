@@ -8,7 +8,6 @@ import { ResponseTypedData } from '@models/Api/responseApi.model';
 import { filter, isArray } from 'lodash';
 import { MenuAttributes } from '@models/Api/menu.model';
 import { SocialMediaAttributes } from '@models/Api/socialMedia.model';
-import { SMService } from '@services/social-media.service';
 @Component({
   selector: 'app-sideNav',
   templateUrl: './side-nav.component.html',
@@ -46,7 +45,6 @@ export class NavBarComponent {
     public scrollService: scrollService,
     private apiCallback: ApiCallback,
     private elRef: ElementRef,
-    public SMService: SMService
   ) {
     this.innerWidth = window.innerWidth;
     this.apiCallback

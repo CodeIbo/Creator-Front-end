@@ -5,12 +5,9 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './modules/app-routing.module';
 import { AppComponent } from './app.component';
-import { IconTabComponent } from './shared/icon-tab/icon-tab.component';
+import { SMIconsComponent } from './shared/sm-icons/icon-tab.component';
 import { NavBarComponent } from './shared/side-nav/side-nav.component';
-import { MainSection } from './static/main-section/main-section.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AboutMe } from './static/about-me-section/about-me.component';
-import { ContactSectionComponent } from './static/contact-section/contact-section/contact-section.component';
 import { PodcastSpotifySubsiteComponent } from './dynamic/podcast-spotify-subsite/podcast-spotify-subsite.component';
 import { HomePageComponent } from './static/home-page/home-page.component';
 import { ErrorNotFoundComponent } from './static/error-not-found/error-not-found.component';
@@ -23,14 +20,13 @@ import { CustomTagsModule } from './modules/custom-tags.module';
 import { SanitizeHtmlPipe } from './filters/sanitizeHtml.pipe';
 import { DynamicComponentLoaderDirective } from './directives/dynamic-component-loader.directive';
 import { SortByDatePipe } from './filters/sortByDate.pipe';
+import { MenuComponent } from './shared/menu/menu.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MainSection,
-    IconTabComponent,
+    SMIconsComponent,
     NavBarComponent,
-    AboutMe,
-    ContactSectionComponent,
+    MenuComponent,
     PodcastSpotifySubsiteComponent,
     HomePageComponent,
     ErrorNotFoundComponent,

@@ -1,6 +1,6 @@
 <section
   *ngIf="smArray.length > 0"
-  class="icon-section standard-shadow p-1/2 bg-white p-3/4-xs p-1-md d-flex-sm justify-content-space-around align-items-center text-accent"
+  [class]="'icon-section d-flex ' + cssClass"
 >
   <ng-container *ngFor="let smItem of smArray">
     <a
@@ -8,7 +8,8 @@
       rel="noopener"
       target="_blank"
       [title]="smItem.title"
-      ><fa-icon [icon]="SMService.socialMediaIcons[smItem.icon]"></fa-icon>
+      class="px-1-lg px-1/2-md"
+      ><fa-icon [icon]="Icons.socialMediaIcons[smItem.icon]"></fa-icon>
     </a>
   </ng-container>
 </section>

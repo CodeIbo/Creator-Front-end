@@ -1,0 +1,12 @@
+@import "../../../assets/scss/breakpoints.scss";
+.menu {
+  a {
+    font-size: 1.4em;
+    @include md {
+      font-size: 1.2em;
+    }
+    @include lg {
+      font-size: 1.45em;
+    }
+  }
+}

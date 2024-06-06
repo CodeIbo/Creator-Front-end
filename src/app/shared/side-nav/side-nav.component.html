@@ -8,35 +8,10 @@
       <fa-icon [icon]="faArrowLeftLong"></fa-icon>
     </button>
   </div>
-  <ng-container *ngIf="menuArray.length > 0">
-    <ul class="d-flex flex-column gap-2 py-1/2 pt-2-sm">
-      <li *ngFor="let menuItem of menuArray">
-        <a
-          [routerLink]="
-            menuItem.page_category === 'blog'
-              ? 'blog/' + menuItem.url
-              : menuItem.url
-          "
-          class="animate-underline"
-          (click)="clickHandler(menuItem.scroll_target)"
-          >{{ menuItem.label }}</a
-        >
-      </li>
-    </ul>
-  </ng-container>
 
-  <div
-    class="d-flex flex-column align-items-center w-100 side-nav__icons mt-2 gap-2"
-    *ngIf="screenBreakpoints.init().sm > innerWidth"
-  >
-    <ng-container *ngFor="let smItem of smArray">
-      <a
-        [href]="smItem.link"
-        rel="noopener"
-        target="_blank"
-        [title]="smItem.title"
-        ><fa-icon [icon]="SMService.socialMediaIcons[smItem.icon]"></fa-icon>
-      </a>
-    </ng-container>
-  </div>
+  <app-menu cssClass="flex-column gap-2 py-1/2 pt-2-sm"></app-menu>
+
+  <app-sm-icons
+    cssClass="flex-column align-items-center text-white gap-2 pt-2"
+  ></app-sm-icons>
 </nav>
