@@ -45,3 +45,4 @@ Thumbs.db
 
 /src/netlify.toml
 /src/app/data
+/src/app/client
