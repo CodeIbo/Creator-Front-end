@@ -11,6 +11,8 @@ import { screenBreakpointsService } from './services/screen-breakpoints.service'
 import { viewManipulation } from './services/view-manipulation.service';
 import 'zone.js';
 import { Icons } from '@services/icons.service';
+import { MetaService } from '@services/meta.service';
+import { SettingsService } from '@services/settings.service';
 
 @Component({
   selector: 'app-root',
@@ -27,9 +29,16 @@ export class AppComponent implements OnInit {
   constructor(
     public screenBreakpoints: screenBreakpointsService,
     public viewManipulation: viewManipulation,
-    public icons: Icons
+    public icons: Icons,
+    private meta: MetaService,
+    public settings: SettingsService
   ) {
     this.innerWidth = window.innerWidth;
+    this.meta.updateMetaInfo(
+      this.settings.getSetting('meta_data_title_global'),
+      this.settings.getSetting('meta_data_description_global'),
+      this.settings.getSetting('keywords_global')
+    );
   }
 
   @HostListener('window:resize') onResize() {

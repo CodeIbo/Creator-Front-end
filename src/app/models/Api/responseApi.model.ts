@@ -4,6 +4,7 @@ import { CustomPageAttributes } from './customPage.model';
 import { EpisodeAttributes } from './episode.model';
 import { MenuAttributes } from './menu.model';
 import { PodcastAttributes } from './podcast.model';
+import { SettingsAttributes } from './settings.model';
 
 export type ApiCallback =
   | ArticlesAttributes
@@ -11,7 +12,8 @@ export type ApiCallback =
   | CustomPageAttributes
   | EpisodeAttributes
   | PodcastAttributes
-  | MenuAttributes;
+  | MenuAttributes
+  | SettingsAttributes;
 
 export interface ResponseUntypedData {
   data?: ApiCallback;

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArticlesAttributes } from '@models/Api/article.model';
 import { ApiCallback } from '@services/api-callback.service';
-import { MetaService } from '@services/metaService.service';
+import { MetaService } from '@services/meta.service';
 
 @Component({
   selector: 'app-article',

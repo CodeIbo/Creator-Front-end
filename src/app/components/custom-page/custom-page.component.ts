@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CustomPageAttributes } from '@models/Api/customPage.model';
-import { MetaService } from '@services/metaService.service';
+import { MetaService } from '@services/meta.service';
 import { Observable, map } from 'rxjs';
 
 @Component({

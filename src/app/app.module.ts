@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
@@ -21,6 +21,12 @@ import { SanitizeHtmlPipe } from './filters/sanitizeHtml.pipe';
 import { DynamicComponentLoaderDirective } from './directives/dynamic-component-loader.directive';
 import { SortByDatePipe } from './filters/sortByDate.pipe';
 import { MenuComponent } from './shared/menu/menu.component';
+import { SettingsService } from '@services/settings.service';
+import { firstValueFrom } from 'rxjs';
+
+export function initializeApp(settingsService: SettingsService) {
+  return () => firstValueFrom(settingsService.fetchSettings());
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +53,15 @@ import { MenuComponent } from './shared/menu/menu.component';
     HttpClientModule,
     CustomTagsModule,
   ],
-  providers: [],
+  providers: [
+    SettingsService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeApp,
+      deps: [SettingsService],
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

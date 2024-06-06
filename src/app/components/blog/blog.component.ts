@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { ActivatedRoute } from '@angular/router';
-import { MetaService } from '@services/metaService.service';
+import { MetaService } from '@services/meta.service';
 import { BlogAttributes } from '@models/Api/blog.model';
 import { ArticlesAttributes } from '@models/Api/article.model';
 import { switchMap } from 'rxjs';
