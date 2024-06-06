@@ -43,6 +43,6 @@ Thumbs.db
 
 # custom
 
-/src/assets/img/
 /src/netlify.toml
 /src/app/data
+/src/app/static/home-page/
