@@ -12,7 +12,7 @@ export class MetaService {
     private metaTitle: Title,
     private settings: SettingsService
   ) {
-    this.globalSuffix = settings.getSetting('meta_data_suffix_global');
+    this.globalSuffix = this.settings.getSetting('meta_data_suffix_global');
   }
 
   updateMetaInfo(title: string, content: string, keywords: string) {

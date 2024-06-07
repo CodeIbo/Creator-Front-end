@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { SMIconsComponent } from './shared/sm-icons/icon-tab.component';
 import { NavBarComponent } from './shared/side-nav/side-nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PodcastSpotifySubsiteComponent } from './dynamic/podcast-spotify-subsite/podcast-spotify-subsite.component';
 import { HomePageComponent } from './client/pages/home/home-page.component';
 import { ErrorNotFoundComponent } from './static/error-not-found/error-not-found.component';
 import { BlogComponent } from './components/blog/blog.component';
@@ -33,7 +32,6 @@ export function initializeApp(settingsService: SettingsService) {
     SMIconsComponent,
     NavBarComponent,
     MenuComponent,
-    PodcastSpotifySubsiteComponent,
     HomePageComponent,
     ErrorNotFoundComponent,
     BlogComponent,
