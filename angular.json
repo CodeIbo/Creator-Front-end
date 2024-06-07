@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "klaudia-portfolio": {
+    "creator777": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,13 +18,35 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/klaudia-portfolio",
+            "outputPath": "dist/",
             "index": "src/app/client/pages/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/assets/img", "src/webmanifest.json"],
+            "assets": [
+              "src/assets/img",
+              {
+                "glob": "**/*",
+                "input": "src/app/client/icons",
+                "output": "assets/"
+              },
+              {
+                "glob": "webmanifest.json",
+                "input": "src/app/client/settings/",
+                "output": "/"
+              },
+              {
+                "glob": "browserconfig.xml",
+                "input": "src/app/client/settings/",
+                "output": "/"
+              },
+              {
+                "glob": ".htaccess",
+                "input": "./",
+                "output": "/"
+              }
+            ],
             "styles": [
               "src/styles.scss",
               "node_modules/slick-carousel/slick/slick.scss",
@@ -41,8 +63,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -73,10 +95,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "klaudia-portfolio:build:production"
+              "browserTarget": "creator777:build:production"
             },
             "development": {
-              "browserTarget": "klaudia-portfolio:build:development"
+              "browserTarget": "creator777:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +106,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "klaudia-portfolio:build"
+            "browserTarget": "creator777:build"
           }
         },
         "test": {
