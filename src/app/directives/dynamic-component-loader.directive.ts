@@ -1,33 +1,30 @@
 import {
+  AfterViewInit,
   Directive,
   ElementRef,
-  OnInit,
   Type,
   ViewContainerRef,
 } from '@angular/core';
 import { SliderComponent } from '../components/slider/slider.component';
-import { linkService } from '@services/link.service';
 
 @Directive({
   selector: '[appComponentLoader]',
 })
-export class DynamicComponentLoaderDirective implements OnInit {
+export class DynamicComponentLoaderDirective implements AfterViewInit {
   componentData: { [key: string]: any } = {};
 
   constructor(
     private viewContainerRef: ViewContainerRef,
-    private el: ElementRef,
-    private linkService: linkService
+    private el: ElementRef
   ) {}
 
-  ngOnInit() {
+  ngAfterViewInit(): void {
     this.loadComponent();
   }
 
   loadComponent() {
     let parentComponent = this.el.nativeElement;
     if (parentComponent) {
-      this.linkService.internalLinksHandler(parentComponent);
       parentComponent
         .querySelectorAll('angular-component')
         .forEach((element: Element) => {

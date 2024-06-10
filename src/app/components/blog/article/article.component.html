@@ -16,9 +16,12 @@
       </small>
       <p class="font-weight-700">{{ article.lead }}</p>
       <article
-        appComponentLoader
         [innerHTML]="article.article_content | sanitizeHtml"
         class="article__text"
+        #sanitizedHtml
+        mutationObserver
+        appComponentLoader
+        (innerHtmlRendered)="afterRenderedInnterHtml()"
       ></article>
     </ng-container>
   </div>

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from '../client/pages/home/home-page.component';
 import { ErrorNotFoundComponent } from '../static/error-not-found/error-not-found.component';
 import { apiRoutes } from './api-routing.module';
@@ -9,8 +9,13 @@ const routes: Routes = [
   { path: 'not-found', component: ErrorNotFoundComponent },
 ];
 
+const routerOptions: ExtraOptions = {
+  anchorScrolling: 'enabled',
+  scrollPositionRestoration: 'enabled',
+};
+
 @NgModule({
-  imports: [RouterModule.forRoot([...routes, ...apiRoutes])],
+  imports: [RouterModule.forRoot([...routes, ...apiRoutes], routerOptions)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

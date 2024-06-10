@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArticlesAttributes } from '@models/Api/article.model';
 import { ApiCallback } from '@services/api-callback.service';
+import { linkService } from '@services/link.service';
 import { MetaService } from '@services/meta.service';
 
 @Component({
@@ -12,10 +13,12 @@ import { MetaService } from '@services/meta.service';
 export class ArticleComponent implements OnInit {
   id: any;
   article: ArticlesAttributes | undefined;
+  @ViewChild('sanitizedHtml') sanitizedHtml: ElementRef | undefined;
   constructor(
     public route: ActivatedRoute,
     public _apiCallback: ApiCallback,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private linkService: linkService
   ) {
     this.route.data.subscribe((data) => {
       const article: ArticlesAttributes = data['article'];
@@ -28,4 +31,7 @@ export class ArticleComponent implements OnInit {
     });
   }
   ngOnInit(): void {}
+  afterRenderedInnterHtml() {
+    this.linkService.internalLinksHandler(this.sanitizedHtml?.nativeElement);
+  }
 }

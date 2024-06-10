@@ -22,6 +22,7 @@ import { SortByDatePipe } from './filters/sortByDate.pipe';
 import { MenuComponent } from './shared/menu/menu.component';
 import { SettingsService } from '@services/settings.service';
 import { firstValueFrom } from 'rxjs';
+import { MutationObserverDirective } from './directives/mutation-observer.directive';
 
 export function initializeApp(settingsService: SettingsService) {
   return () => firstValueFrom(settingsService.fetchSettings());
@@ -41,6 +42,7 @@ export function initializeApp(settingsService: SettingsService) {
     SortByDatePipe,
     CustomPageComponent,
     DynamicComponentLoaderDirective,
+    MutationObserverDirective,
   ],
   imports: [
     BrowserModule,
