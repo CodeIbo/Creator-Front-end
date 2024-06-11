@@ -1,6 +1,6 @@
 //link
 
-.animate-underline {
+.decorated-underline-base {
   position: relative;
   font-style: italic;
   &:after {
@@ -8,16 +8,29 @@
     background-color: $accent;
     position: absolute;
     width: 100%;
-    transform: scaleX(0);
     height: 2px;
     bottom: 0;
     left: 0;
+  }
+}
+
+.animate-underline {
+  @extend .decorated-underline-base;
+  &:after {
+    transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.5s ease-out;
   }
   &:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
+  }
+}
+
+.activated-underline {
+  @extend .decorated-underline-base;
+  &:after {
+    transform: scaleX(1);
   }
 }
 

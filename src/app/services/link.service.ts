@@ -5,7 +5,6 @@ import { scrollService } from './scroll.service';
 @Injectable({ providedIn: 'root' })
 export class linkService {
   constructor(private _router: Router, private scrollService: scrollService) {}
-  ngAfterViewInit(): void {}
   internalLinksHandler(html: any) {
     let links: HTMLAnchorElement[] = html.querySelectorAll('a');
     links.forEach((element) => {
@@ -14,13 +13,9 @@ export class linkService {
       let href = element.href?.toLowerCase();
       if (href?.startsWith(location.origin.toLowerCase())) {
         element.addEventListener('click', (e: MouseEvent) => {
-          this._router
-            .navigate([href.substring(location.origin.length)])
-            .then(() => {
-              if (scrollAtribute) {
-                this.scrollService.scroll(scrollAtribute);
-              }
-            });
+          this._router.navigate([href.substring(location.origin.length)], {
+            fragment: scrollAtribute,
+          });
           e.preventDefault();
         });
       }

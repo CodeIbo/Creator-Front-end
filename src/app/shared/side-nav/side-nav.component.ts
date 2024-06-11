@@ -2,7 +2,6 @@ import { Component, ElementRef, HostListener } from '@angular/core';
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import { ApiCallback } from '@services/api-callback.service';
 import { screenBreakpointsService } from 'src/app/services/screen-breakpoints.service';
-import { scrollService } from 'src/app/services/scroll.service';
 import { viewManipulation } from 'src/app/services/view-manipulation.service';
 import { ResponseTypedData } from '@models/Api/responseApi.model';
 import { filter, isArray } from 'lodash';
@@ -23,6 +22,9 @@ export class NavBarComponent {
   onClick(e: MouseEvent) {
     this.elwewnt = e.target;
   }
+  @HostListener('window:resize') onResize() {
+    this.innerWidth = window.innerWidth;
+  }
 
   @HostListener('document:click', ['$event'])
   hideOnClickOutside(ev: MouseEvent) {
@@ -35,16 +37,11 @@ export class NavBarComponent {
     }
   }
 
-  @HostListener('window:resize') onResize() {
-    this.innerWidth = window.innerWidth;
-  }
-
   constructor(
     public screenBreakpoints: screenBreakpointsService,
     public viewManipulation: viewManipulation,
-    public scrollService: scrollService,
     private apiCallback: ApiCallback,
-    private elRef: ElementRef,
+    private elRef: ElementRef
   ) {
     this.innerWidth = window.innerWidth;
     this.apiCallback
@@ -62,11 +59,4 @@ export class NavBarComponent {
         }
       });
   }
-
-  clickHandler = (anchor: string | null) => {
-    this.viewManipulation.toogleView();
-    if (anchor) {
-      this.scrollService.scroll(anchor);
-    }
-  };
 }

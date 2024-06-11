@@ -9,7 +9,10 @@
     </button>
   </div>
 
-  <app-menu cssClass="flex-column gap-2 py-1/2 pt-2-sm"></app-menu>
+  <app-menu
+    [isMobile]="innerWidth <= screenBreakpoints.init().md"
+    cssClass="flex-column gap-2 py-1/2 pt-2-sm"
+  ></app-menu>
 
   <app-sm-icons
     cssClass="flex-column align-items-center text-white gap-2 pt-2"

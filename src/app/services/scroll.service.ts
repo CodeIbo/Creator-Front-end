@@ -12,6 +12,6 @@ export class scrollService {
           inline: 'nearest',
         });
       }
-    }, 100);
+    }, 0);
   };
 }

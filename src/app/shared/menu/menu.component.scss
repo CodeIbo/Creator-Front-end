@@ -1,6 +1,16 @@
 @import "../../../assets/scss/breakpoints.scss";
 .menu {
-  a {
+  &__item_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    @include lg {
+      width: auto;
+    }
+  }
+  &__item {
     font-size: 1.4em;
     @include md {
       font-size: 1.2em;
