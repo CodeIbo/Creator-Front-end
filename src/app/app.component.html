@@ -18,7 +18,11 @@
       class="h-100 py-3/4 mr-auto-md ml-0-md mx-auto"
     >
       <img
-        [src]="settings.getSetting('logo') ? settings.getSetting('logo')  : '../assets/img/placeholder_logo.png'"
+        [src]="
+          settings.getSetting('logo')
+            ? settings.getSetting('logo')
+            : '../assets/img/placeholder_logo.png'
+        "
         class="max-h-100"
         alt="Company Logo"
       />

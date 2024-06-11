@@ -25,6 +25,15 @@ export class AppComponent implements OnInit {
   faBars = faBars;
   @ViewChild('hamburgermenu') hamburgerMenu: ElementRef | undefined;
   @ViewChild('sidebar', { static: false }) sidebar: ElementRef | undefined;
+  @HostListener('window:resize') onResize() {
+    this.innerWidth = window.innerWidth;
+    if (
+      this.screenBreakpoints.init().md > innerWidth &&
+      this.viewManipulation.showSideBar
+    ) {
+      this.viewManipulation.toogleView();
+    }
+  }
 
   constructor(
     public screenBreakpoints: screenBreakpointsService,
@@ -40,10 +49,5 @@ export class AppComponent implements OnInit {
       this.settings.getSetting('keywords_global')
     );
   }
-
-  @HostListener('window:resize') onResize() {
-    this.innerWidth = window.innerWidth;
-  }
-
   ngOnInit(): void {}
 }
