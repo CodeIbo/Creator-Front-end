@@ -34,6 +34,24 @@
       ],
       "@models/*": [
         "src/app/models/*"
+      ],
+      "@pages/*": [
+        "src/app/pages/*"
+      ],
+      "@components/*": [
+        "src/app/components/*"
+      ],
+      "@client/*": [
+        "src/app/client/*"
+      ],
+      "@modules/*": [
+        "src/app/modules/*"
+      ],
+      "@filters/*": [
+        "src/app/filters/*"
+      ],
+      "@directives/*": [
+        "src/app/directives/*"
       ]
     }
   },

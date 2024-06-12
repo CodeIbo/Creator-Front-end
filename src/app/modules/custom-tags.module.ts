@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 // import { CustomTagsService } from '@services/custom-tags.service';
-import { SliderComponent } from '../components/slider/slider.component';
+import { SliderComponent } from '@components/external/slider/slider.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CommonModule } from '@angular/common';
 

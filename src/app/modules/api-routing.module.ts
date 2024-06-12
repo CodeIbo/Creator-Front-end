@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { BlogComponent } from '../components/blog/blog.component';
+import { BlogComponent } from '@pages/blog/blog.component';
 import { BlogResolver } from '@resolvers/blog.resolver';
 import { ArticleResolver } from '@resolvers/article.resolver';
-import { ArticleComponent } from '../components/blog/article/article.component';
-import { CustomPageComponent } from '../components/custom-page/custom-page.component';
+import { ArticleComponent } from '@pages/blog/article/article.component';
+import { CustomPageComponent } from '@pages/custom-page/custom-page.component';
 import { CustomPageResolver } from '@resolvers/custom-pages.resolver';
 import { CustomPageGuard } from '../guards/custom-page.guard';
 

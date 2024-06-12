@@ -5,7 +5,7 @@ import {
   Type,
   ViewContainerRef,
 } from '@angular/core';
-import { SliderComponent } from '../components/slider/slider.component';
+import { SliderComponent } from '@components/external/slider/slider.component';
 
 @Directive({
   selector: '[appComponentLoader]',
