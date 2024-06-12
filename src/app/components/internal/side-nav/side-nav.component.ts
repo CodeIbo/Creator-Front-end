@@ -1,8 +1,8 @@
 import { Component, ElementRef, HostListener } from '@angular/core';
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import { ApiCallback } from '@services/api-callback.service';
-import { screenBreakpointsService } from 'src/app/services/screen-breakpoints.service';
-import { viewManipulation } from 'src/app/services/view-manipulation.service';
+import { screenBreakpointsService } from '@services/screen-breakpoints.service';
+import { viewManipulation } from '@services/view-manipulation.service';
 import { ResponseTypedData } from '@models/Api/responseApi.model';
 import { filter, isArray } from 'lodash';
 import { MenuAttributes } from '@models/Api/menu.model';
