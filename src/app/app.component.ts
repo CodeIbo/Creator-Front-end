@@ -1,9 +1,9 @@
 import { slideInOut } from './animations/slide-in-out';
 import {
+  AfterViewInit,
   Component,
   ElementRef,
   HostListener,
-  OnInit,
   ViewChild,
 } from '@angular/core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -13,6 +13,8 @@ import 'zone.js';
 import { Icons } from '@services/icons.service';
 import { MetaService } from '@services/meta.service';
 import { SettingsService } from '@services/settings.service';
+import { ActivatedRoute } from '@angular/router';
+import { scrollService } from '@services/scroll.service';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +22,7 @@ import { SettingsService } from '@services/settings.service';
   styleUrls: ['./app.component.scss'],
   animations: [slideInOut],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements AfterViewInit {
   public innerWidth: number | any;
   faBars = faBars;
   @ViewChild('hamburgermenu') hamburgerMenu: ElementRef | undefined;
@@ -40,7 +42,9 @@ export class AppComponent implements OnInit {
     public viewManipulation: viewManipulation,
     public icons: Icons,
     private meta: MetaService,
-    public settings: SettingsService
+    public settings: SettingsService,
+    private route: ActivatedRoute,
+    private scrollService: scrollService
   ) {
     this.innerWidth = window.innerWidth;
     this.meta.updateMetaInfo(
@@ -49,5 +53,11 @@ export class AppComponent implements OnInit {
       this.settings.getSetting('keywords_global')
     );
   }
-  ngOnInit(): void {}
+  ngAfterViewInit(): void {
+    this.route.fragment.subscribe((fragment) => {
+      if (fragment) {
+        this.scrollService.scroll();
+      }
+    });
+  }
 }

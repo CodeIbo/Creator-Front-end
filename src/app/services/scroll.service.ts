@@ -1,17 +1,26 @@
 import { Injectable } from '@angular/core';
+import { NavigationEnd, Router, Scroll } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class scrollService {
-  scroll = (el: string) => {
-    setTimeout(() => {
-      const element = document.querySelector(`#${el}`);
-      if (element !== null) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-          inline: 'nearest',
-        });
+  constructor(private router: Router) {}
+  scroll() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof Scroll) {
+        const tree = this.router.parseUrl(this.router.url);
+        if (tree.fragment) {
+          setTimeout(() => {
+            const element = document.querySelector('#' + tree.fragment);
+            if (element) {
+              element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+                inline: 'nearest',
+              });
+            }
+          });
+        }
       }
-    }, 0);
-  };
+    });
+  }
 }

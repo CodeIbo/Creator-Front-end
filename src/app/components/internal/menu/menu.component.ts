@@ -1,10 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {
-  ActivatedRoute,
-  IsActiveMatchOptions,
-  NavigationEnd,
-  Router,
-} from '@angular/router';
+import { IsActiveMatchOptions } from '@angular/router';
 import { MenuAttributes } from '@models/Api/menu.model';
 import { ResponseTypedData } from '@models/Api/responseApi.model';
 import { ApiCallback } from '@services/api-callback.service';
@@ -18,11 +13,10 @@ import { isArray } from 'lodash';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent {
   @Input() cssClass = '';
   menu: MenuAttributes[] | [] = [];
   @Input() isMobile: boolean = false;
-  private scrollTarget: string | null = null;
   public lastUrl: string | undefined;
   public configActiveRoute: IsActiveMatchOptions = {
     fragment: 'exact',
@@ -34,9 +28,7 @@ export class MenuComponent implements OnInit {
     private apiCallback: ApiCallback,
     public screenBreakpoints: screenBreakpointsService,
     private scrollService: scrollService,
-    private viewManipulation: viewManipulation,
-    private router: Router,
-    private route: ActivatedRoute
+    private viewManipulation: viewManipulation
   ) {
     this.apiCallback
       .fetchData('menu')
@@ -46,18 +38,13 @@ export class MenuComponent implements OnInit {
         }
       });
   }
-  ngOnInit() {
-    this.route.fragment.subscribe((fragment) => {
-      if (fragment) {
-        this.scrollTarget = fragment;
-        this.scrollService.scroll(fragment);
-      }
-    });
-  }
 
-  clickHandler = () => {
+  clickHandler = (fragment: string | null) => {
     if (this.isMobile) {
       this.viewManipulation.toogleView();
+    }
+    if (fragment) {
+      this.scrollService.scroll();
     }
   };
 }

@@ -13,7 +13,7 @@
       [fragment]="menuItem.scroll_target ? menuItem.scroll_target : undefined"
       routerLinkActive="activated-underline"
       [routerLinkActiveOptions]="configActiveRoute"
-      (click)="clickHandler()"
+      (click)="clickHandler(menuItem.scroll_target)"
       >{{ menuItem.label }}</a
     >
   </li>

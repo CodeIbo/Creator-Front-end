@@ -30,6 +30,7 @@ export function initializeApp(settingsService: SettingsService) {
 }
 const ngHttpCachingConfig: NgHttpCachingConfig = {
   lifetime: 1000 * 60 * 15,
+  allowedMethod: ['GET'],
 };
 @NgModule({
   declarations: [

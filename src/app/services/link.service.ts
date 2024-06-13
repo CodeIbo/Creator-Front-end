@@ -13,9 +13,11 @@ export class linkService {
       let href = element.href?.toLowerCase();
       if (href?.startsWith(location.origin.toLowerCase())) {
         element.addEventListener('click', (e: MouseEvent) => {
-          this._router.navigate([href.substring(location.origin.length)], {
-            fragment: scrollAtribute,
-          });
+          this._router
+            .navigate([href.substring(location.origin.length)], {
+              fragment: scrollAtribute,
+            })
+            .then(() => this.scrollService.scroll());
           e.preventDefault();
         });
       }
