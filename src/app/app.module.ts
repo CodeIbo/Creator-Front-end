@@ -23,10 +23,14 @@ import { FilterPipe } from '@filters/filter.pipe';
 import { SanitizeHtmlPipe } from '@filters/sanitizeHtml.pipe';
 import { SortByDatePipe } from '@filters/sortByDate.pipe';
 import { SettingsService } from '@services/settings.service';
+import { NgHttpCachingConfig, NgHttpCachingModule } from 'ng-http-caching';
 
 export function initializeApp(settingsService: SettingsService) {
   return () => firstValueFrom(settingsService.fetchSettings());
 }
+const ngHttpCachingConfig: NgHttpCachingConfig = {
+  lifetime: 1000 * 60 * 15,
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +56,7 @@ export function initializeApp(settingsService: SettingsService) {
     FormsModule,
     HttpClientModule,
     CustomTagsModule,
+    NgHttpCachingModule.forRoot(ngHttpCachingConfig),
   ],
   providers: [
     SettingsService,
