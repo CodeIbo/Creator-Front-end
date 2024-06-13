@@ -1,7 +1,10 @@
 <footer class="footer text-white p-1 w-100 h-100">
   <div class="d-flex justify-content-center align-items-center h-100">
     <small class="mr-auto"
-      >&copy; Copyright 2024 {{ settings.getSetting("company_name") }}</small
+      >&copy; Copyright 2024 {{ settings.getSetting("company_name") }} <br />
+      <a class="animate-underline" routerLink="/polityka-prywatnosci"
+        ><span>Polityka Prywatności</span></a
+      ></small
     >
     <app-sm-icons
       class="ml-auto footer__social_media"
