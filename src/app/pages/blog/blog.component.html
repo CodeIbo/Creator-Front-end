@@ -17,16 +17,37 @@
               | sortByDate : 'date'
               | blogFilter : search : ['article_title', 'lead']
           "
-          class="standard-shadow p-2 bg-secondary text-white preview-article d-flex flex-column justify-content-space-between gap-2"
+          class="standard-shadow preview-article d-flex flex-column h-100 bg-secondary-light-1 text-white w-100"
         >
-          <h2 class="m-0 text-center">{{ post.article_title }}</h2>
-          <p class="m-0">{{ post.lead }}</p>
-          <div class="d-flex justify-content-flex-end">
-            <a
-              routerLink="{{ post.url }}"
-              class="button button-accent standard-shadow"
-              ><span>Read more</span></a
+          <picture
+            class="preview-article__background"
+            [ngStyle]="{
+              'background-image':
+                post.photo_url.length > 0
+                  ? 'url(' + post.photo_url + ')'
+                  : 'url(../../../assets/img/placeholder_photo.webp)'
+            }"
+          ></picture>
+          <div
+            class="preview-article__text d-flex justify-content-center flex-column h-100 w-100"
+          >
+            <div
+              class="d-flex justify-content-center align-items-center h-100 p-1"
             >
+              <h2 class="m-0 text-center">{{ post.article_title }}</h2>
+            </div>
+            <div
+              class="d-flex justify-content-space-between align-items-center bg-secondary py-2 px-1 preview-article__interactive-line"
+            >
+              <span class="preview-article__interactive-line--reading-time"
+                >~{{ post.readingTime }} min read</span
+              >
+              <a
+                routerLink="{{ post.url }}"
+                class="button button-accent standard-shadow"
+                ><span>Read more</span></a
+              >
+            </div>
           </div>
         </article>
       </ng-container>

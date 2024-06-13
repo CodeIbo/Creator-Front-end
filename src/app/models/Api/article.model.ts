@@ -10,5 +10,6 @@ export interface ArticlesAttributes extends Meta {
   lead: string;
   post_tags: string[];
   photo_url: string;
+  reading_time?: number;
   date: Date;
 }

@@ -44,10 +44,20 @@ export class BlogComponent implements OnInit {
       .subscribe((fetchedArticles: ResponseTypedData<ArticlesAttributes[]>) => {
         this.isDataArray = isArray(fetchedArticles.data);
         if (isArray(fetchedArticles.data)) {
-          this.articles = fetchedArticles.data;
+          this.articles = fetchedArticles.data.map((article) => ({
+            ...article,
+            readingTime: this.calculateReadingTime(article.article_content),
+          }));
         }
       });
   }
 
   ngOnInit(): void {}
+
+  calculateReadingTime(text: string): number {
+    const wordsPerMinute = 200;
+    const words = text.split(/\s+/).length;
+    const minutes = Math.ceil(words / wordsPerMinute);
+    return minutes;
+  }
 }
