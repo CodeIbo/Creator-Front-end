@@ -23,7 +23,7 @@
             class="preview-article__background"
             [ngStyle]="{
               'background-image':
-                post.photo_url.length > 0
+                post.photo_url && post.photo_url.length > 0
                   ? 'url(' + post.photo_url + ')'
                   : 'url(../../../assets/img/placeholder_photo.webp)'
             }"

@@ -1,33 +1,33 @@
-.search-bar{
-    background: rgba($white,0.4);
-    border: none;
-    border-bottom: 2px solid $secondary;
-    font-size: 1.2rem;
-    width: 14em;
-    padding: 0.5em 1em;
-    position: relative;
+.search-bar {
+  background: rgba($white, 0.4);
+  border: none;
+  border-bottom: 2px solid $accent;
+  font-size: 1.2rem;
+  width: 14em;
+  padding: 0.5em 1em;
+  position: relative;
 
-    @include sm {
-        font-size: 1.35rem;
-        width: 16em;
-    }
-    @include md {
-        font-size: 1.5rem;
-        width: 18em;
-    }
-    @include lg {
-        font-size: 1.7rem;
-        width: 20em;
-    }
-    &:focus{
-        outline: none;
-    }
-    .icon {
-        position: absolute;
-        right: 0.5em;
-        transform: scaleX(-1);
-    }
-    input {
-        width: 90%;
-    }
+  @include sm {
+    font-size: 1.35rem;
+    width: 16em;
+  }
+  @include md {
+    font-size: 1.5rem;
+    width: 18em;
+  }
+  @include lg {
+    font-size: 1.7rem;
+    width: 20em;
+  }
+  &:focus {
+    outline: none;
+  }
+  .icon {
+    position: absolute;
+    right: 0.5em;
+    transform: scaleX(-1);
+  }
+  input {
+    width: 90%;
+  }
 }
