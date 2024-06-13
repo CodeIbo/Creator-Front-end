@@ -44,7 +44,7 @@ export class AppComponent implements AfterViewInit {
     private meta: MetaService,
     public settings: SettingsService,
     private route: ActivatedRoute,
-    private scrollService: scrollService
+    public scrollService: scrollService
   ) {
     this.innerWidth = window.innerWidth;
     this.meta.updateMetaInfo(
