@@ -34,13 +34,8 @@
   }
 }
 
-.static-page {
-  padding: 4rem 0;
-  min-height: 85vh;
-  overflow-x: hidden;
-  @include sm {
-    padding: 6rem 0;
-  }
+.custom-page {
+  padding-top: $top-bar-height;
 }
 
 .standard-shadow {

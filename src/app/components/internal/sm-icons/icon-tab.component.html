@@ -1,7 +1,4 @@
-<section
-  *ngIf="smArray.length > 0"
-  [class]="'icon-section d-flex ' + cssClass"
->
+<section *ngIf="smArray.length > 0" [class]="'icon-section d-flex ' + cssClass">
   <ng-container *ngFor="let smItem of smArray">
     <a
       [href]="smItem.link"

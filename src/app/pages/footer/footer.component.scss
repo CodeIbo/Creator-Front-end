@@ -1,0 +1,17 @@
+@import "variabless";
+@import "breakpoints";
+
+:host {
+  display: block;
+  height: $footer-height;
+  background: $secondary;
+}
+
+.footer {
+  &__social_media {
+    font-size: 0.7rem;
+    @include md {
+      font-size: 1.2rem;
+    }
+  }
+}

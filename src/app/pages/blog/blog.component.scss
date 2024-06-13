@@ -1,8 +1,11 @@
 @import "breakpoints";
 @import "variabless";
 @import "global-classess";
+
 :host {
   display: block;
+  min-height: calc(100vh - $top-bar-height - 0.22rem);
+  padding-top: $top-bar-height;
 }
 
 .grid-layout {

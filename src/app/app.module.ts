@@ -24,6 +24,7 @@ import { SanitizeHtmlPipe } from '@filters/sanitizeHtml.pipe';
 import { SortByDatePipe } from '@filters/sortByDate.pipe';
 import { SettingsService } from '@services/settings.service';
 import { NgHttpCachingConfig, NgHttpCachingModule } from 'ng-http-caching';
+import { FooterComponent } from './pages/footer/footer.component';
 
 export function initializeApp(settingsService: SettingsService) {
   return () => firstValueFrom(settingsService.fetchSettings());
@@ -48,6 +49,7 @@ const ngHttpCachingConfig: NgHttpCachingConfig = {
     CustomPageComponent,
     DynamicComponentLoaderDirective,
     MutationObserverDirective,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

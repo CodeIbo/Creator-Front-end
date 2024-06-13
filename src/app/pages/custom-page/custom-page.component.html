@@ -1,6 +1,5 @@
 <ng-container *ngIf="customPage$ | async as customPage">
   <section
-    class="static-page py-3"
     [innerHTML]="customPage.page_content | sanitizeHtml"
     #sanitizedHtml
     appComponentLoader
