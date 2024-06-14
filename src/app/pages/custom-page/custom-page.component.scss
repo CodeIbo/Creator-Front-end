@@ -2,6 +2,6 @@
 
 :host {
   display: block;
-  min-height: calc(100vh - $top-bar-height - 0.22rem);
+  min-height: calc(100vh - $top-bar-height - $fix-height);
   padding-top: $top-bar-height;
 }

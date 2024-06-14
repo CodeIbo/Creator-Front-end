@@ -12,13 +12,21 @@ $colors: (
   "black": $black,
 );
 
-//declarations
+//DECLARATIONS
 
+//Style
 $base-fontSize: 16px;
 $base-padding: 1rem;
 $base-margin: 1rem;
 $base-percentage: 1%;
 $base-round: 0.5rem;
 $base-gap: 1rem;
-$top-bar-height: 4.25rem;
+
+//Height
+$fix-height: 0.75rem;
+
+//Footer
 $footer-height: 5rem;
+
+//Top Bar
+$top-bar-height: 4.25rem;
