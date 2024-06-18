@@ -23,7 +23,7 @@ export interface ResponseUntypedData {
   timeStamp: string;
 }
 export interface ResponseTypedData<T = ApiCallback> {
-  data?: T;
+  data: T;
   httpStatus: string;
   message: string;
   statusCode: number;

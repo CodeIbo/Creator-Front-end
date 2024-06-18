@@ -8,6 +8,7 @@ import { switchMap } from 'rxjs';
 import { ApiCallback } from '@services/api-callback.service';
 import { ResponseTypedData } from '@models/Api/responseApi.model';
 import { isArray } from 'lodash';
+import { SettingsService } from '@services/settings.service';
 
 @Component({
   selector: 'app-blog',
@@ -24,7 +25,8 @@ export class BlogComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private metaService: MetaService,
-    private apiCallback: ApiCallback
+    private apiCallback: ApiCallback,
+    public settings: SettingsService
   ) {
     this.route.data
       .pipe(

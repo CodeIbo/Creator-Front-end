@@ -2,8 +2,13 @@
   <div class="d-flex justify-content-center align-items-center h-100">
     <small class="mr-auto"
       >&copy; Copyright 2024 {{ settings.getSetting("company_name") }} <br />
-      <a class="animate-underline" routerLink="/polityka-prywatnosci"
-        ><span>Polityka Prywatności</span></a
+      <a
+        class="animate-underline"
+        routerLink="/polityka-prywatnosci"
+        [title]="settings.getSetting('privacy_policy.link_title.value', 'ui')"
+        ><span>{{
+          settings.getSetting("privacy_policy.link_text.value", "ui")
+        }}</span></a
       ></small
     >
     <app-sm-icons

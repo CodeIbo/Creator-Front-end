@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ApiCallback } from './api-callback.service';
 import { ResponseTypedData } from '@models/Api/responseApi.model';
@@ -15,10 +15,18 @@ export class SettingsService {
   constructor(private apiCallback: ApiCallback) {}
 
   fetchSettings(): Observable<any> {
-    return this.apiCallback.fetchData(`settings/${environment.settingsID}`).pipe(
-      map((response: ResponseTypedData<SettingsAttributes>) => {
-        this.settings = response.data;
-        return response;
+    const globalSettings$ = this.apiCallback.fetchData(
+      `settings/${environment.settingsID}`
+    );
+    const uiSettings$ = this.apiCallback.fetchData('ui-settings');
+
+    return forkJoin([globalSettings$, uiSettings$]).pipe(
+      map(([globalResponse, uiResponse]: [ResponseTypedData<any>, any]) => {
+        this.settings = {
+          global: globalResponse.data,
+          ui: uiResponse.data,
+        };
+        return this.settings;
       })
     );
   }
@@ -27,7 +35,16 @@ export class SettingsService {
     return this.settings;
   }
 
-  getSetting(key: string): any {
-    return this.settings ? this.settings[key] : null;
+  getSetting(path: string, scope: 'global' | 'ui' = 'global'): any {
+    const keys = path.split('.');
+    let current = this.settings ? this.settings[scope] : null;
+    for (const key of keys) {
+      if (current && key in current) {
+        current = current[key];
+      } else {
+        return null;
+      }
+    }
+    return current;
   }
 }

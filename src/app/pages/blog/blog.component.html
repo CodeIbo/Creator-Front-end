@@ -3,7 +3,13 @@
     <div class="d-flex justify-content-center">
       <div class="search-bar">
         <h1 class="text-center title">{{ blog?.blog_title }}</h1>
-        <input placeholder="Example" type="search" [(ngModel)]="search" />
+        <input
+          [placeholder]="
+            settings.getSetting('blog.input_placeholder.value', 'ui')
+          "
+          type="search"
+          [(ngModel)]="search"
+        />
         <button class="icon text-secondary">
           <fa-icon [icon]="faSearch"></fa-icon>
         </button>
@@ -40,12 +46,16 @@
               class="d-flex justify-content-space-between align-items-center bg-secondary py-2 px-1 preview-article__interactive-line"
             >
               <span class="preview-article__interactive-line--reading-time"
-                >~{{ post.readingTime }} min read</span
+                >~{{ post.readingTime }}
+                {{ settings.getSetting("blog.mins_read.value", "ui") }}</span
               >
               <a
                 routerLink="{{ post.url }}"
                 class="button button-accent standard-shadow"
-                ><span>Read more</span></a
+                [title]="settings.getSetting('blog.button_title.value', 'ui')"
+                ><span>{{
+                  settings.getSetting("blog.button_text.value", "ui")
+                }}</span></a
               >
             </div>
           </div>
