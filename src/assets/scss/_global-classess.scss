@@ -44,7 +44,7 @@
 
 .underline {
   background-size: 1px 1em;
-  box-shadow: inset 0 -0.01em #000;
+  box-shadow: inset 0 -0.01em $black;
   display: inline;
   transition: box-shadow 0.3s;
 }
@@ -56,8 +56,8 @@ hr.dash {
   margin-left: 0;
   background: repeating-linear-gradient(
     90deg,
-    #000,
-    #000 6px,
+    $black,
+    $black 6px,
     transparent 6px,
     transparent 12px
   );

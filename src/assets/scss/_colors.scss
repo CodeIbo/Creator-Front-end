@@ -1,3 +1,15 @@
+$colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "tertiary": $tertiary,
+  "accent": $accent,
+  "error": $error,
+  "info": $info,
+  "correct": $correct,
+  "white": $white,
+  "black": $black,
+);
+
 @each $key, $val in $colors {
     .text-#{$key}{
         color: $val !important;
