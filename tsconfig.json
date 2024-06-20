@@ -52,6 +52,9 @@
       ],
       "@directives/*": [
         "src/app/directives/*"
+      ],
+      "@enviroment/*": [
+        "src/environments/*"
       ]
     }
   },

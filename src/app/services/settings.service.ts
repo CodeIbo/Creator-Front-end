@@ -4,7 +4,8 @@ import { map } from 'rxjs/operators';
 import { ApiCallback } from './api-callback.service';
 import { ResponseTypedData } from '@models/Api/responseApi.model';
 import { SettingsAttributes } from '@models/Api/settings.model';
-import { environment } from 'src/environments/environment';
+import { environment } from '@enviroment/environment';
+import { UISettingsAttributes } from '@models/Api/ui-settings';
 
 @Injectable({
   providedIn: 'root',
@@ -21,13 +22,18 @@ export class SettingsService {
     const uiSettings$ = this.apiCallback.fetchData('ui-settings');
 
     return forkJoin([globalSettings$, uiSettings$]).pipe(
-      map(([globalResponse, uiResponse]: [ResponseTypedData<any>, any]) => {
-        this.settings = {
-          global: globalResponse.data,
-          ui: uiResponse.data,
-        };
-        return this.settings;
-      })
+      map(
+        ([globalResponse, uiResponse]: [
+          ResponseTypedData<SettingsAttributes>,
+          ResponseTypedData<UISettingsAttributes>
+        ]) => {
+          this.settings = {
+            global: globalResponse.data,
+            ui: uiResponse.data,
+          };
+          return this.settings;
+        }
+      )
     );
   }
 

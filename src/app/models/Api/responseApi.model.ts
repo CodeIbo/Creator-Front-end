@@ -5,6 +5,7 @@ import { EpisodeAttributes } from './episode.model';
 import { MenuAttributes } from './menu.model';
 import { PodcastAttributes } from './podcast.model';
 import { SettingsAttributes } from './settings.model';
+import { UISettingsAttributes } from './ui-settings';
 
 export type ApiCallback =
   | ArticlesAttributes
@@ -13,15 +14,9 @@ export type ApiCallback =
   | EpisodeAttributes
   | PodcastAttributes
   | MenuAttributes
-  | SettingsAttributes;
+  | SettingsAttributes
+  | UISettingsAttributes;
 
-export interface ResponseUntypedData {
-  data?: ApiCallback;
-  httpStatus: string;
-  message: string;
-  statusCode: number;
-  timeStamp: string;
-}
 export interface ResponseTypedData<T = ApiCallback> {
   data: T;
   httpStatus: string;
