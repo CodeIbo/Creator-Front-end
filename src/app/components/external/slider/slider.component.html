@@ -2,7 +2,7 @@
   <div ngxSlickItem *ngFor="let item of galleryItems" class="slide">
     <figure class="align-items-center d-flex flex-column">
       <img [src]="item.img" [alt]="item.alt" class="slide__img" />
-      <figcaption>
+      <figcaption class="slide__text">
         <cite>{{ item?.txt }}</cite>
       </figcaption>
     </figure>
