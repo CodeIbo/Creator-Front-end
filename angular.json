@@ -42,6 +42,11 @@
                 "output": "/"
               },
               {
+                "glob": "robots.txt",
+                "input": "src/app/client/settings/",
+                "output": "/"
+              },
+              {
                 "glob": ".htaccess",
                 "input": "./",
                 "output": "/"
