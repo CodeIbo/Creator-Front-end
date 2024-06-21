@@ -1,26 +1,16 @@
-import {
-  AfterViewInit,
-  Directive,
-  ElementRef,
-  Type,
-  ViewContainerRef,
-} from '@angular/core';
+import { Directive, ElementRef, Type, ViewContainerRef } from '@angular/core';
 import { SliderComponent } from '@components/external/slider/slider.component';
 
 @Directive({
   selector: '[appComponentLoader]',
 })
-export class DynamicComponentLoaderDirective implements AfterViewInit {
+export class DynamicComponentLoaderDirective {
   componentData: { [key: string]: any } = {};
 
   constructor(
     private viewContainerRef: ViewContainerRef,
     private el: ElementRef
   ) {}
-
-  ngAfterViewInit(): void {
-    this.loadComponent();
-  }
 
   loadComponent() {
     let parentComponent = this.el.nativeElement;

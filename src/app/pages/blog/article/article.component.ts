@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DynamicComponentLoaderDirective } from '@directives/dynamic-component-loader.directive';
 import { ArticlesAttributes } from '@models/Api/article.model';
 import { ApiCallback } from '@services/api-callback.service';
 import { linkService } from '@services/link.service';
@@ -14,6 +15,8 @@ export class ArticleComponent implements OnInit {
   id: any;
   article: ArticlesAttributes | undefined;
   @ViewChild('sanitizedHtml') sanitizedHtml: ElementRef | undefined;
+  @ViewChild(DynamicComponentLoaderDirective)
+  dynamicComponent!: DynamicComponentLoaderDirective;
   constructor(
     public route: ActivatedRoute,
     public _apiCallback: ApiCallback,
@@ -33,5 +36,6 @@ export class ArticleComponent implements OnInit {
   ngOnInit(): void {}
   afterRenderedInnterHtml() {
     this.linkService.internalLinksHandler(this.sanitizedHtml?.nativeElement);
+    this.dynamicComponent.loadComponent();
   }
 }

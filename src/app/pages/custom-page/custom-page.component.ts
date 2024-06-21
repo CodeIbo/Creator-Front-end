@@ -3,8 +3,10 @@ import {
   ChangeDetectorRef,
   ElementRef,
   ViewChild,
+  ViewChildren,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DynamicComponentLoaderDirective } from '@directives/dynamic-component-loader.directive';
 import { CustomPageAttributes } from '@models/Api/customPage.model';
 import { linkService } from '@services/link.service';
 import { MetaService } from '@services/meta.service';
@@ -19,6 +21,8 @@ export class CustomPageComponent {
   customPage: Observable<CustomPageAttributes> | null = null;
   customPage$: Observable<CustomPageAttributes> | undefined;
   @ViewChild('sanitizedHtml') sanitizedHtml: ElementRef | undefined;
+  @ViewChild(DynamicComponentLoaderDirective)
+  dynamicComponent!: DynamicComponentLoaderDirective;
   constructor(
     private metaService: MetaService,
     private route: ActivatedRoute,
@@ -41,5 +45,6 @@ export class CustomPageComponent {
   }
   afterRenderedInnterHtml() {
     this.linkService.internalLinksHandler(this.sanitizedHtml?.nativeElement);
+    this.dynamicComponent.loadComponent();
   }
 }
