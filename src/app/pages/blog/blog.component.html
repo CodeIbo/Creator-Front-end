@@ -62,7 +62,9 @@
         </article>
       </ng-container>
       <ng-template #skeletonBlock>
-        This content is displayed if isVisible is false.
+        <ng-container *ngFor="let _ of skeletonCount">
+          <app-skeleton-blog></app-skeleton-blog>
+        </ng-container>
       </ng-template>
     </div>
   </div>

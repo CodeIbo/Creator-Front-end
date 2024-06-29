@@ -27,6 +27,7 @@
     "jquery": "^3.7.1",
     "lodash": "^4.17.21",
     "ng-http-caching": "^14.0.3",
+    "ngx-skeleton-loader": "^6.0.0",
     "ngx-slick-carousel": "^0.6.0",
     "rxjs": "~7.5.0",
     "slick-carousel": "^1.8.1",

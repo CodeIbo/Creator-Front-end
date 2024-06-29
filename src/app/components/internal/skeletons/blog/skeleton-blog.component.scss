@@ -1,0 +1,34 @@
+@import "variabless";
+@import "breakpoints";
+:host {
+  display: block;
+}
+
+.preview-article {
+  display: block;
+  border-radius: $base-round;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  min-height: 25rem;
+  min-width: 15rem;
+
+  @include custom-breakpoint(350px) {
+    min-width: 20rem;
+  }
+
+  @include sm {
+    min-width: 25rem;
+  }
+  @include md {
+    min-width: 35rem;
+  }
+
+  @include lg {
+    min-width: 25rem;
+  }
+  @include xl {
+    min-width: 32rem;
+  }
+}

@@ -21,6 +21,7 @@ export class BlogComponent implements OnInit {
   articles: ArticlesAttributes[] = [];
   isDataArray: boolean = false;
   blog: BlogAttributes | undefined;
+  skeletonCount: number[] = Array(4).fill(0);
 
   constructor(
     private route: ActivatedRoute,

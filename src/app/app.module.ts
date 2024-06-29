@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
@@ -6,6 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { firstValueFrom } from 'rxjs';
 import { NgHttpCachingConfig, NgHttpCachingModule } from 'ng-http-caching';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { AppComponent } from './app.component';
 
@@ -14,6 +15,7 @@ import { SMIconsComponent } from '@components/internal/sm-icons/icon-tab.compone
 import { NavBarComponent } from '@components/internal/side-nav/side-nav.component';
 import { FooterComponent } from '@components/internal/footer/footer.component';
 import { MenuComponent } from '@components/internal/menu/menu.component';
+import { SkeletonBlogComponent } from './components/internal/skeletons/blog/skeleton-blog.component';
 
 //Modules
 import { AppRoutingModule } from '@modules/app-routing.module';
@@ -37,6 +39,9 @@ import { SortByDatePipe } from '@filters/sortByDate.pipe';
 
 //Services
 import { SettingsService } from '@services/settings.service';
+
+//Interceptors
+import { HttpInterceptorService } from './interceptors/http.interceptor';
 
 export function initializeApp(settingsService: SettingsService) {
   return () => firstValueFrom(settingsService.fetchSettings());
@@ -62,6 +67,7 @@ const ngHttpCachingConfig: NgHttpCachingConfig = {
     DynamicComponentLoaderDirective,
     MutationObserverDirective,
     FooterComponent,
+    SkeletonBlogComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,6 +78,7 @@ const ngHttpCachingConfig: NgHttpCachingConfig = {
     HttpClientModule,
     CustomTagsModule,
     NgHttpCachingModule.forRoot(ngHttpCachingConfig),
+    NgxSkeletonLoaderModule,
   ],
   providers: [
     SettingsService,
@@ -79,6 +86,11 @@ const ngHttpCachingConfig: NgHttpCachingConfig = {
       provide: APP_INITIALIZER,
       useFactory: initializeApp,
       deps: [SettingsService],
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
       multi: true,
     },
   ],

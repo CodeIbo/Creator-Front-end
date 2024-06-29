@@ -11,7 +11,7 @@ export class ApiCallback {
     endpoint: string,
     params?: { [param: string]: string | string[] }
   ): Observable<any> {
-    const url = `${this.baseUrl}/${endpoint}`;
+    const url = `${this.baseUrl}/api/${endpoint}`;
     let httpParams = new HttpParams();
     if (params) {
       Object.keys(params).forEach((key) => {

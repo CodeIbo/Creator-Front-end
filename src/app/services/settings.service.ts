@@ -19,7 +19,7 @@ export class SettingsService {
     const globalSettings$ = this.apiCallback.fetchData(
       `settings/${environment.settingsID}`
     );
-    const uiSettings$ = this.apiCallback.fetchData('ui-settings');
+    const uiSettings$ = this.apiCallback.fetchData('settings/ui');
 
     return forkJoin([globalSettings$, uiSettings$]).pipe(
       map(
