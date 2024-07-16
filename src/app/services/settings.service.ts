@@ -16,9 +16,7 @@ export class SettingsService {
   constructor(private apiCallback: ApiCallback) {}
 
   fetchSettings(): Observable<any> {
-    const globalSettings$ = this.apiCallback.fetchData(
-      `settings/${environment.settingsID}`
-    );
+    const globalSettings$ = this.apiCallback.fetchData('settings/default');
     const uiSettings$ = this.apiCallback.fetchData('settings/ui');
 
     return forkJoin([globalSettings$, uiSettings$]).pipe(
