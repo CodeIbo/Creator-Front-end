@@ -8,7 +8,7 @@
 .navbar {
   position: fixed;
   z-index: 1;
-  height: $top-bar-height;
+  height: $nav-bar-height;
   button {
     fa-icon {
       pointer-events: none;
@@ -17,5 +17,8 @@
         font-size: 2.5em;
       }
     }
+  }
+  &__logo {
+    padding: $nav-bar-logo-pad;
   }
 }

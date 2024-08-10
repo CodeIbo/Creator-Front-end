@@ -1,8 +1,8 @@
 @import "variabless";
 :host {
   display: block;
-  min-height: calc(100vh - $top-bar-height - 0.22rem);
-  padding-top: $top-bar-height;
+  min-height: calc(100vh - $nav-bar-height - 0.22rem);
+  padding-top: $nav-bar-height;
 }
 
 .article {

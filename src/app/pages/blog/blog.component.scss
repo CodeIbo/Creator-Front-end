@@ -4,8 +4,8 @@
 
 :host {
   display: block;
-  min-height: calc(100vh - $top-bar-height - $fix-height);
-  padding-top: $top-bar-height;
+  min-height: calc(100vh - $nav-bar-height - $fix-height);
+  padding-top: $nav-bar-height;
 }
 
 .grid-layout {
