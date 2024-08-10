@@ -55,6 +55,9 @@
       ],
       "@enviroment/*": [
         "src/environments/*"
+      ],
+      "@animations/*": [
+        "src/app/animations/*"
       ]
     }
   },

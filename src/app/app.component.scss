@@ -1,22 +1,5 @@
-@import "breakpoints";
-@import "variabless";
-
 :host {
   display: block;
   min-height: 100%;
 }
 
-.navbar {
-  position: fixed;
-  z-index: 1;
-  height: $top-bar-height;
-  button {
-    fa-icon {
-      pointer-events: none;
-      font-size: 2em;
-      @include sm {
-        font-size: 2.5em;
-      }
-    }
-  }
-}

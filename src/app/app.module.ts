@@ -15,7 +15,8 @@ import { SMIconsComponent } from '@components/internal/sm-icons/icon-tab.compone
 import { NavBarComponent } from '@components/internal/side-nav/side-nav.component';
 import { FooterComponent } from '@components/internal/footer/footer.component';
 import { MenuComponent } from '@components/internal/menu/menu.component';
-import { SkeletonBlogComponent } from './components/internal/skeletons/blog/skeleton-blog.component';
+import { SkeletonBlogComponent } from '@components/internal/skeletons/blog/skeleton-blog.component';
+import { NavigationBarComponent } from '@components/internal/navigation-bar/navigation-bar.component';
 
 //Modules
 import { AppRoutingModule } from '@modules/app-routing.module';
@@ -68,6 +69,7 @@ const ngHttpCachingConfig: NgHttpCachingConfig = {
     MutationObserverDirective,
     FooterComponent,
     SkeletonBlogComponent,
+    NavigationBarComponent,
   ],
   imports: [
     BrowserModule,

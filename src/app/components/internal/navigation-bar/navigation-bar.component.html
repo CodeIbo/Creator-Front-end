@@ -1,0 +1,40 @@
+<nav class="navbar w-100 bg-primary standard-shadow">
+  <section
+    class="d-flex container align-items-center justify-content-center-md justify-content-flex-start h-100"
+  >
+    <button
+      *ngIf="screenBreakpoints.init().md >= innerWidth"
+      (click)="viewManipulation.toogleView()"
+      #hamburgermenu
+      class="text-accent"
+      title="Otwórz menu"
+      id="hamburger-menu"
+    >
+      <fa-icon [icon]="icons.icons.hamburgerMenu"></fa-icon>
+    </button>
+    <a
+      routerLink="/"
+      (click)="scrollService.setTopPosition()"
+      title="Idź do strony głównej"
+      class="h-100 py-3/4 mr-auto-md ml-0-md mx-auto"
+    >
+      <img
+        [src]="
+          settings.getSetting('logo')
+            ? settings.getSetting('logo')
+            : '../../../../assets/img/placeholder_logo.png'
+        "
+        class="max-h-100"
+        alt="Company Logo"
+      />
+    </a>
+    <app-menu
+      *ngIf="screenBreakpoints.init().md <= innerWidth"
+      class="px-1-md"
+    ></app-menu>
+    <app-sm-icons
+      *ngIf="screenBreakpoints.init().md <= innerWidth"
+      cssClass="text-accent"
+    ></app-sm-icons>
+  </section>
+</nav>

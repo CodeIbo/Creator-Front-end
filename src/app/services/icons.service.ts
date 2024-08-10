@@ -9,7 +9,7 @@ import {
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 
 @Injectable({ providedIn: 'root' })
 export class Icons {
@@ -26,5 +26,6 @@ export class Icons {
     ...this.socialMediaIcons,
     email: faEnvelope,
     hamburgerMenu: faBars,
+    leftArrow: faArrowLeftLong,
   };
 }
